@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.virtualextensions import Virtualextensions
+from circuitid_python.models.virtualextensions import Virtualextensions
 
 # Path params
 IdSchema = schemas.AnyTypeSchema

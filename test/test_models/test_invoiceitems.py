@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.invoiceitems import Invoiceitems
+from circuitid_python.models.invoiceitems import Invoiceitems
 from circuitid_python import configuration
 
 

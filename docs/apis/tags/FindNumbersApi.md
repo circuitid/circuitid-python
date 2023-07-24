@@ -1,5 +1,5 @@
 <a id="__pageTop"></a>
-# circuitid_python.rest.tags.find_numbers_api.FindNumbersApi
+# circuitid_python.api.tags.find_numbers_api.FindNumbersApi
 
 All URIs are relative to *https://cloud9.circuitid.com*
 
@@ -20,7 +20,7 @@ Search and retrieve multiple objects simultaneously.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import find_numbers_api
+from circuitid_python.api.tags import find_numbers_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.

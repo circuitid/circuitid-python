@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.conversations import Conversations
+from circuitid_python.models.conversations import Conversations
 from circuitid_python import configuration
 
 

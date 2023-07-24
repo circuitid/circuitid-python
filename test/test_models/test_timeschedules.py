@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.timeschedules import Timeschedules
+from circuitid_python.models.timeschedules import Timeschedules
 from circuitid_python import configuration
 
 

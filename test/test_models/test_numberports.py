@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.numberports import Numberports
+from circuitid_python.models.numberports import Numberports
 from circuitid_python import configuration
 
 

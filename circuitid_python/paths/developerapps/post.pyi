@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.developerapps import Developerapps
+from circuitid_python.models.developerapps import Developerapps
 
 # body param
 SchemaForRequestBodyApplicationJson = Developerapps

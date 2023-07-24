@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.holidays import Holidays
+from circuitid_python.models.holidays import Holidays
 from circuitid_python import configuration
 
 

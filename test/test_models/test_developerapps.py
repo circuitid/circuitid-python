@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.developerapps import Developerapps
+from circuitid_python.models.developerapps import Developerapps
 from circuitid_python import configuration
 
 

@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.conferencerooms import Conferencerooms
+from circuitid_python.models.conferencerooms import Conferencerooms
 from circuitid_python import configuration
 
 

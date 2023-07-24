@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.conferencerooms import Conferencerooms
+from circuitid_python.models.conferencerooms import Conferencerooms
 
 from . import path
 

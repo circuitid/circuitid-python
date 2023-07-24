@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.numberports.Numberports
+# circuitid_python.models.numberports.Numberports
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

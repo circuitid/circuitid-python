@@ -1,5 +1,5 @@
 <a id="__pageTop"></a>
-# circuitid_python.rest.tags.invoice_items_api.InvoiceItemsApi
+# circuitid_python.api.tags.invoice_items_api.InvoiceItemsApi
 
 All URIs are relative to *https://cloud9.circuitid.com*
 
@@ -21,7 +21,7 @@ Search and retrieve multiple objects simultaneously.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import invoice_items_api
+from circuitid_python.api.tags import invoice_items_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -257,8 +257,8 @@ Get an object from the REST API Endpoint by its unique id.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import invoice_items_api
-from circuitid_python.CircuitIDModel.response_error import ResponseError
+from circuitid_python.api.tags import invoice_items_api
+from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.

@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.clients import Clients
+from circuitid_python.models.clients import Clients
 
 from . import path
 

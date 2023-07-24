@@ -1,5 +1,5 @@
 <a id="__pageTop"></a>
-# circuitid_python.rest.tags.app_marketplace_api.AppMarketplaceApi
+# circuitid_python.api.tags.app_marketplace_api.AppMarketplaceApi
 
 All URIs are relative to *https://cloud9.circuitid.com*
 
@@ -20,7 +20,7 @@ Search and retrieve multiple objects simultaneously.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import app_marketplace_api
+from circuitid_python.api.tags import app_marketplace_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.

@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.faxaccounts import Faxaccounts
+from circuitid_python.models.faxaccounts import Faxaccounts
 from circuitid_python import configuration
 
 

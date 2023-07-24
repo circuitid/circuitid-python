@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.chatrooms import Chatrooms
+from circuitid_python.models.chatrooms import Chatrooms
 
 # Path params
 IdSchema = schemas.AnyTypeSchema

@@ -1,5 +1,5 @@
 <a id="__pageTop"></a>
-# circuitid_python.rest.tags.authentication_api.AuthenticationApi
+# circuitid_python.api.tags.authentication_api.AuthenticationApi
 
 All URIs are relative to *https://cloud9.circuitid.com*
 
@@ -20,8 +20,8 @@ Add a new object to the system.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import authentication_api
-from circuitid_python.CircuitIDModel.authentication import Authentication
+from circuitid_python.api.tags import authentication_api
+from circuitid_python.models.authentication import Authentication
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.

@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.menuoptions import Menuoptions
+from circuitid_python.models.menuoptions import Menuoptions
 from circuitid_python import configuration
 
 

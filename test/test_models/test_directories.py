@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.directories import Directories
+from circuitid_python.models.directories import Directories
 from circuitid_python import configuration
 
 

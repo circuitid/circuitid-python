@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.messagecampaigns import Messagecampaigns
+from circuitid_python.models.messagecampaigns import Messagecampaigns
 from circuitid_python import configuration
 
 

@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.virtualextensions import Virtualextensions
+from circuitid_python.models.virtualextensions import Virtualextensions
 from circuitid_python import configuration
 
 

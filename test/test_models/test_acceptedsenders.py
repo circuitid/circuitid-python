@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.acceptedsenders import Acceptedsenders
+from circuitid_python.models.acceptedsenders import Acceptedsenders
 from circuitid_python import configuration
 
 

@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.callqueues.Callqueues
+# circuitid_python.models.callqueues.Callqueues
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

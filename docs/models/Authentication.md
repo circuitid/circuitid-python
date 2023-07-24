@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.authentication.Authentication
+# circuitid_python.models.authentication.Authentication
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.ratecenters.Ratecenters
+# circuitid_python.models.ratecenters.Ratecenters
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

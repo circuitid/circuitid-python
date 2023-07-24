@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.domains import Domains
+from circuitid_python.models.domains import Domains
 
 from . import path
 

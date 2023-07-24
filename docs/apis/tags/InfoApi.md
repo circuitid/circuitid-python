@@ -1,5 +1,5 @@
 <a id="__pageTop"></a>
-# circuitid_python.rest.tags.info_api.InfoApi
+# circuitid_python.api.tags.info_api.InfoApi
 
 All URIs are relative to *https://cloud9.circuitid.com*
 
@@ -20,7 +20,7 @@ Returns an object containing the requested information.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import info_api
+from circuitid_python.api.tags import info_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.

@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.phoneinboundrules import Phoneinboundrules
+from circuitid_python.models.phoneinboundrules import Phoneinboundrules
 
 # Path params
 IdSchema = schemas.AnyTypeSchema

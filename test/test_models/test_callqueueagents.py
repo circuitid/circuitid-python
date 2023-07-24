@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.callqueueagents import Callqueueagents
+from circuitid_python.models.callqueueagents import Callqueueagents
 from circuitid_python import configuration
 
 

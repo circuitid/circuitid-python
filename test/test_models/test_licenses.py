@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.licenses import Licenses
+from circuitid_python.models.licenses import Licenses
 from circuitid_python import configuration
 
 

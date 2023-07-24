@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.groups.Groups
+# circuitid_python.models.groups.Groups
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

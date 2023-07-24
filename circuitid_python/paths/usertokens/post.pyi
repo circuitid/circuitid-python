@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.usertokens import Usertokens
+from circuitid_python.models.usertokens import Usertokens
 
 # body param
 SchemaForRequestBodyApplicationJson = Usertokens

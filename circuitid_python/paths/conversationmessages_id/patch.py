@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.conversationmessages import Conversationmessages
+from circuitid_python.models.conversationmessages import Conversationmessages
 
 from . import path
 

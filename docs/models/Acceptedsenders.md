@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.acceptedsenders.Acceptedsenders
+# circuitid_python.models.acceptedsenders.Acceptedsenders
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

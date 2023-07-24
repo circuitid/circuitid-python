@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.ratecenters import Ratecenters
+from circuitid_python.models.ratecenters import Ratecenters
 from circuitid_python import configuration
 
 

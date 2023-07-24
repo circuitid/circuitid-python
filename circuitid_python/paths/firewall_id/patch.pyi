@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.firewall import Firewall
+from circuitid_python.models.firewall import Firewall
 
 # Path params
 IdSchema = schemas.AnyTypeSchema

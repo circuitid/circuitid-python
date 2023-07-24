@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.announcements.Announcements
+# circuitid_python.models.announcements.Announcements
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

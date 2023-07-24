@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.acceptedsenders import Acceptedsenders
+from circuitid_python.models.acceptedsenders import Acceptedsenders
 
 # Path params
 IdSchema = schemas.AnyTypeSchema

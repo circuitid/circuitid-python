@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.response_date import ResponseDate
+from circuitid_python.models.response_date import ResponseDate
 from circuitid_python import configuration
 
 

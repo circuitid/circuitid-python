@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.response_error.ResponseError
+# circuitid_python.models.response_error.ResponseError
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

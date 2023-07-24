@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.find import Find
+from circuitid_python.models.find import Find
 from circuitid_python import configuration
 
 

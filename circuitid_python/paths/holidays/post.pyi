@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.holidays import Holidays
+from circuitid_python.models.holidays import Holidays
 
 # body param
 SchemaForRequestBodyApplicationJson = Holidays

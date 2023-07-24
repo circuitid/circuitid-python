@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.response_users.ResponseUsers
+# circuitid_python.models.response_users.ResponseUsers
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

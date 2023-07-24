@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.faxaccounts import Faxaccounts
+from circuitid_python.models.faxaccounts import Faxaccounts
 
 from . import path
 

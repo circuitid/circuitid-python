@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.callqueueagents import Callqueueagents
+from circuitid_python.models.callqueueagents import Callqueueagents
 
 # Path params
 IdSchema = schemas.AnyTypeSchema

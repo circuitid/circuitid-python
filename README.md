@@ -147,9 +147,9 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import time
 import circuitid_python
 from pprint import pprint
-from circuitid_python.rest.tags import accepted_senders_api
-from circuitid_python.CircuitIDModel.acceptedsenders import Acceptedsenders
-from circuitid_python.CircuitIDModel.response_error import ResponseError
+from circuitid_python.api.tags import accepted_senders_api
+from circuitid_python.models.acceptedsenders import Acceptedsenders
+from circuitid_python.models.response_error import ResponseError
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
@@ -456,8 +456,8 @@ RecursionError indicating the maximum recursion limit has been exceeded. In that
 
 Solution 1:
 Use specific imports for apis and models like:
-- `from circuitid_python.rest.default_api import DefaultApi`
-- `from circuitid_python.CircuitIDModel.pet import Pet`
+- `from circuitid_python.api.default_api import DefaultApi`
+- `from circuitid_python.models.pet import Pet`
 
 Solution 1:
 Before importing the package, adjust the maximum recursion limit as shown below:

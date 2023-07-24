@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.chatrooms import Chatrooms
+from circuitid_python.models.chatrooms import Chatrooms
 from circuitid_python import configuration
 
 

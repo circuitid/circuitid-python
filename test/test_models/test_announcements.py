@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.announcements import Announcements
+from circuitid_python.models.announcements import Announcements
 from circuitid_python import configuration
 
 

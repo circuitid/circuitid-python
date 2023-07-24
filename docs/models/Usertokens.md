@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.usertokens.Usertokens
+# circuitid_python.models.usertokens.Usertokens
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

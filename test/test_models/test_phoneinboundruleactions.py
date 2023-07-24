@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.phoneinboundruleactions import Phoneinboundruleactions
+from circuitid_python.models.phoneinboundruleactions import Phoneinboundruleactions
 from circuitid_python import configuration
 
 

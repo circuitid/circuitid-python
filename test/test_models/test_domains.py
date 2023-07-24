@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.domains import Domains
+from circuitid_python.models.domains import Domains
 from circuitid_python import configuration
 
 

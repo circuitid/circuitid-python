@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.response_users import ResponseUsers
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python import configuration
 
 

@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.groups import Groups
+from circuitid_python.models.groups import Groups
 
 from . import path
 

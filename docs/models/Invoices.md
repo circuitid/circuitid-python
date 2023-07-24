@@ -1,4 +1,4 @@
-# circuitid_python.CircuitIDModel.invoices.Invoices
+# circuitid_python.models.invoices.Invoices
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

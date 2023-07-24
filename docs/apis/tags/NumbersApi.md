@@ -1,5 +1,5 @@
 <a id="__pageTop"></a>
-# circuitid_python.rest.tags.numbers_api.NumbersApi
+# circuitid_python.api.tags.numbers_api.NumbersApi
 
 All URIs are relative to *https://cloud9.circuitid.com*
 
@@ -22,7 +22,7 @@ Search and retrieve multiple objects simultaneously.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import numbers_api
+from circuitid_python.api.tags import numbers_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -258,8 +258,8 @@ Get an object from the REST API Endpoint by its unique id.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import numbers_api
-from circuitid_python.CircuitIDModel.response_error import ResponseError
+from circuitid_python.api.tags import numbers_api
+from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -445,8 +445,8 @@ Make updates to specific fields within the record without replacing the entire d
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import numbers_api
-from circuitid_python.CircuitIDModel.numbers import Numbers
+from circuitid_python.api.tags import numbers_api
+from circuitid_python.models.numbers import Numbers
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.

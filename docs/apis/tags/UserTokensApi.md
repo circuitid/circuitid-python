@@ -1,5 +1,5 @@
 <a id="__pageTop"></a>
-# circuitid_python.rest.tags.user_tokens_api.UserTokensApi
+# circuitid_python.api.tags.user_tokens_api.UserTokensApi
 
 All URIs are relative to *https://cloud9.circuitid.com*
 
@@ -24,8 +24,8 @@ Add a new object to the system.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import user_tokens_api
-from circuitid_python.CircuitIDModel.usertokens import Usertokens
+from circuitid_python.api.tags import user_tokens_api
+from circuitid_python.models.usertokens import Usertokens
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -190,7 +190,7 @@ Search and retrieve multiple objects simultaneously.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import user_tokens_api
+from circuitid_python.api.tags import user_tokens_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -426,8 +426,8 @@ Get an object from the REST API Endpoint by its unique id.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import user_tokens_api
-from circuitid_python.CircuitIDModel.response_error import ResponseError
+from circuitid_python.api.tags import user_tokens_api
+from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -613,8 +613,8 @@ Make updates to specific fields within the record without replacing the entire d
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import user_tokens_api
-from circuitid_python.CircuitIDModel.usertokens import Usertokens
+from circuitid_python.api.tags import user_tokens_api
+from circuitid_python.models.usertokens import Usertokens
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -798,7 +798,7 @@ Delete an object by id, removing it from the service.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.rest.tags import user_tokens_api
+from circuitid_python.api.tags import user_tokens_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.

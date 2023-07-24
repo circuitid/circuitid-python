@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.contacts import Contacts
+from circuitid_python.models.contacts import Contacts
 from circuitid_python import configuration
 
 

@@ -13,7 +13,7 @@
 import unittest
 
 import circuitid_python
-from circuitid_python.CircuitIDModel.groups import Groups
+from circuitid_python.models.groups import Groups
 from circuitid_python import configuration
 
 

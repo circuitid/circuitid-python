@@ -25,7 +25,7 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
-from circuitid_python.CircuitIDModel.timeschedules import Timeschedules
+from circuitid_python.models.timeschedules import Timeschedules
 
 from . import path
 
