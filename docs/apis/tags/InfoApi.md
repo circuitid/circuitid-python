@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
 # circuitid-python.CircuitID.tags.info_api.InfoApi
 
-All URIs are relative to *https://cloud9.circuitid.com*
+All URIs are relative to *https://rest.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,10 +22,10 @@ Returns an object containing the requested information.
 import circuitid-python
 from circuitid-python.CircuitID.tags import info_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid-python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters

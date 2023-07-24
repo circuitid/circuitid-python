@@ -8,8 +8,19 @@ We are excited to have you on board and are confident that this documentation si
                 
 Happy coding!
 
+# Clients
 
-- API version: 0.47.8
+Discover the convenience of Circuit ID's readily available Client API libraries, enabling you to initiate seamless integration without delay. These pre-built libraries are designed for immediate use, empowering you to leverage the API's functionalities effortlessly. Get started with a Circuit ID&reg; Client library and streamline your development process today.
+
+- <a href='https://github.com/circuitid/circuitid-node' target='_blank'>Node</a>
+- <a href='https://github.com/circuitid/circuitid-python' target='_blank'>Python</a>
+- <a href='https://github.com/circuitid/circuitid-java' target='_blank'>Java</a>
+- <a href='https://github.com/circuitid/circuitid-csharp' target='_blank'>C Sharp</a>
+- <a href='https://github.com/circuitid/circuitid-ruby' target='_blank'>Ruby</a>
+- <a href='https://github.com/circuitid/circuitid-go' target='_blank'>Go</a>
+
+
+- API version: 0.47.14
 - Package version: 1.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.circuitid.com/](https://www.circuitid.com/)
@@ -115,9 +126,9 @@ Note: response header deserialization has not yet been added
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install git+https://github.com/circuitid/circuitid-${lang[$key]}.git
+pip install git+https://github.com/circuitid/circuitid-python.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/circuitid/circuitid-${lang[$key]}.git`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/circuitid/circuitid-python.git`)
 
 Then import the package:
 ```python
@@ -150,10 +161,10 @@ from pprint import pprint
 from circuitid-python.CircuitID.tags import accepted_senders_api
 from circuitid-python.CircuitID.acceptedsenders import Acceptedsenders
 from circuitid-python.CircuitID.response_error import ResponseError
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid-python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -183,7 +194,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://cloud9.circuitid.com*
+All URIs are relative to *https://rest.circuitid.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -448,56 +459,7 @@ Authentication schemes defined for the API:
 - **Location**: HTTP header
 
 
-## Author
 
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
-support@circuitid.com
 
 ## Notes for Large OpenAPI documents
 If the OpenAPI document is large, imports in circuitid-python.apis and circuitid-python.models may fail with a

@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
 # circuitid-python.CircuitID.tags.authentication_api.AuthenticationApi
 
-All URIs are relative to *https://cloud9.circuitid.com*
+All URIs are relative to *https://rest.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,10 +23,10 @@ import circuitid-python
 from circuitid-python.CircuitID.tags import authentication_api
 from circuitid-python.CircuitID.authentication import Authentication
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid-python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
