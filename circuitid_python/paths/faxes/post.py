@@ -189,7 +189,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _create_faxe_oapg(
+    def _create_fax_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -202,7 +202,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _create_faxe_oapg(
+    def _create_fax_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -216,7 +216,7 @@ class BaseApi(api_client.Api):
 
 
     @typing.overload
-    def _create_faxe_oapg(
+    def _create_fax_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -227,7 +227,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _create_faxe_oapg(
+    def _create_fax_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -240,7 +240,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _create_faxe_oapg(
+    def _create_fax_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -304,11 +304,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class CreateFaxe(BaseApi):
+class CreateFax(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def create_faxe(
+    def create_fax(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -321,7 +321,7 @@ class CreateFaxe(BaseApi):
     ]: ...
 
     @typing.overload
-    def create_faxe(
+    def create_fax(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -335,7 +335,7 @@ class CreateFaxe(BaseApi):
 
 
     @typing.overload
-    def create_faxe(
+    def create_fax(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -346,7 +346,7 @@ class CreateFaxe(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def create_faxe(
+    def create_fax(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -359,7 +359,7 @@ class CreateFaxe(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def create_faxe(
+    def create_fax(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -368,7 +368,7 @@ class CreateFaxe(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._create_faxe_oapg(
+        return self._create_fax_oapg(
             body=body,
             content_type=content_type,
             accept_content_types=accept_content_types,
@@ -442,7 +442,7 @@ class ApiForpost(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._create_faxe_oapg(
+        return self._create_fax_oapg(
             body=body,
             content_type=content_type,
             accept_content_types=accept_content_types,

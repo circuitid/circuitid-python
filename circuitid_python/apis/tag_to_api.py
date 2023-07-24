@@ -21,7 +21,7 @@ from circuitid_python.apis.tags.directories_api import DirectoriesApi
 from circuitid_python.apis.tags.domains_api import DomainsApi
 from circuitid_python.apis.tags.dns_records_api import DNSRecordsApi
 from circuitid_python.apis.tags.faxes_api import FaxesApi
-from circuitid_python.apis.tags.fax_account_api import FaxAccountApi
+from circuitid_python.apis.tags.fax_accounts_api import FaxAccountsApi
 from circuitid_python.apis.tags.find_numbers_api import FindNumbersApi
 from circuitid_python.apis.tags.firewall_api import FirewallApi
 from circuitid_python.apis.tags.groups_api import GroupsApi
@@ -73,7 +73,7 @@ TagToApi = typing_extensions.TypedDict(
         TagValues.DOMAINS: DomainsApi,
         TagValues.DNS_RECORDS: DNSRecordsApi,
         TagValues.FAXES: FaxesApi,
-        TagValues.FAX_ACCOUNT: FaxAccountApi,
+        TagValues.FAX_ACCOUNTS: FaxAccountsApi,
         TagValues.FIND_NUMBERS: FindNumbersApi,
         TagValues.FIREWALL: FirewallApi,
         TagValues.GROUPS: GroupsApi,
@@ -126,7 +126,7 @@ tag_to_api = TagToApi(
         TagValues.DOMAINS: DomainsApi,
         TagValues.DNS_RECORDS: DNSRecordsApi,
         TagValues.FAXES: FaxesApi,
-        TagValues.FAX_ACCOUNT: FaxAccountApi,
+        TagValues.FAX_ACCOUNTS: FaxAccountsApi,
         TagValues.FIND_NUMBERS: FindNumbersApi,
         TagValues.FIREWALL: FirewallApi,
         TagValues.GROUPS: GroupsApi,

@@ -1,12 +1,12 @@
 <a id="__pageTop"></a>
-# circuitid_python.api.tags.fax_account_api.FaxAccountApi
+# circuitid_python.api.tags.fax_accounts_api.FaxAccountsApi
 
-All URIs are relative to *https://cloud9.circuitid.com*
+All URIs are relative to *https://rest.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_fax_account**](#create_fax_account) | **post** /faxaccounts | Create a new object
-[**find_fax_account**](#find_fax_account) | **get** /faxaccounts | Find multiple objects
+[**find_fax_accounts**](#find_fax_accounts) | **get** /faxaccounts | Find multiple objects
 [**get_fax_account**](#get_fax_account) | **get** /faxaccounts/{id} | Get object by id
 [**patch_fax_account**](#patch_fax_account) | **patch** /faxaccounts/{id} | Patch object&#x27;s data
 [**remove_fax_account**](#remove_fax_account) | **delete** /faxaccounts/{id} | Delete object by id
@@ -24,13 +24,13 @@ Add a new object to the system.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.api.tags import fax_account_api
+from circuitid_python.api.tags import fax_accounts_api
 from circuitid_python.models.faxaccounts import Faxaccounts
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -46,7 +46,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = fax_account_api.FaxAccountApi(api_client)
+    api_instance = fax_accounts_api.FaxAccountsApi(api_client)
 
     # example passing only required values which don't have defaults set
     body = Faxaccounts(None)
@@ -57,7 +57,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxAccountApi->create_fax_account: %s\n" % e)
+        print("Exception when calling FaxAccountsApi->create_fax_account: %s\n" % e)
 ```
 ### Parameters
 
@@ -177,9 +177,9 @@ headers | Unset | headers were not defined |
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **find_fax_account**
-<a id="find_fax_account"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type find_fax_account()
+# **find_fax_accounts**
+<a id="find_fax_accounts"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type find_fax_accounts()
 
 Find multiple objects
 
@@ -190,12 +190,12 @@ Search and retrieve multiple objects simultaneously.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.api.tags import fax_account_api
+from circuitid_python.api.tags import fax_accounts_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -211,7 +211,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = fax_account_api.FaxAccountApi(api_client)
+    api_instance = fax_accounts_api.FaxAccountsApi(api_client)
 
     # example passing only optional values
     query_params = {
@@ -225,12 +225,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     }
     try:
         # Find multiple objects
-        api_response = api_instance.find_fax_account(
+        api_response = api_instance.find_fax_accounts(
             query_params=query_params,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxAccountApi->find_fax_account: %s\n" % e)
+        print("Exception when calling FaxAccountsApi->find_fax_accounts: %s\n" % e)
 ```
 ### Parameters
 
@@ -310,18 +310,18 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#find_fax_account.ApiResponseFor200) | A JSON object containing the requested data
-400 | [ApiResponseFor400](#find_fax_account.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#find_fax_account.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#find_fax_account.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#find_fax_account.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#find_fax_account.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#find_fax_account.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#find_fax_account.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#find_fax_account.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#find_fax_account.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#find_fax_accounts.ApiResponseFor200) | A JSON object containing the requested data
+400 | [ApiResponseFor400](#find_fax_accounts.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#find_fax_accounts.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#find_fax_accounts.ApiResponseFor403) | 
+405 | [ApiResponseFor405](#find_fax_accounts.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#find_fax_accounts.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#find_fax_accounts.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#find_fax_accounts.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#find_fax_accounts.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#find_fax_accounts.ApiResponseFor503) | 
 
-#### find_fax_account.ApiResponseFor200
+#### find_fax_accounts.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -344,63 +344,63 @@ Key | Input Type | Accessed Type | Description | Notes
 **skip** | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
-#### find_fax_account.ApiResponseFor400
+#### find_fax_accounts.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor401
+#### find_fax_accounts.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor403
+#### find_fax_accounts.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor405
+#### find_fax_accounts.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor406
+#### find_fax_accounts.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor408
+#### find_fax_accounts.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor429
+#### find_fax_accounts.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor500
+#### find_fax_accounts.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### find_fax_account.ApiResponseFor503
+#### find_fax_accounts.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -426,13 +426,13 @@ Get an object from the REST API Endpoint by its unique id.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.api.tags import fax_account_api
+from circuitid_python.api.tags import fax_accounts_api
 from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -448,7 +448,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = fax_account_api.FaxAccountApi(api_client)
+    api_instance = fax_accounts_api.FaxAccountsApi(api_client)
 
     # example passing only required values which don't have defaults set
     path_params = {
@@ -461,7 +461,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxAccountApi->get_fax_account: %s\n" % e)
+        print("Exception when calling FaxAccountsApi->get_fax_account: %s\n" % e)
 ```
 ### Parameters
 
@@ -613,13 +613,13 @@ Make updates to specific fields within the record without replacing the entire d
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.api.tags import fax_account_api
+from circuitid_python.api.tags import fax_accounts_api
 from circuitid_python.models.faxaccounts import Faxaccounts
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -635,7 +635,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = fax_account_api.FaxAccountApi(api_client)
+    api_instance = fax_accounts_api.FaxAccountsApi(api_client)
 
     # example passing only required values which don't have defaults set
     path_params = {
@@ -650,7 +650,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxAccountApi->patch_fax_account: %s\n" % e)
+        print("Exception when calling FaxAccountsApi->patch_fax_account: %s\n" % e)
 ```
 ### Parameters
 
@@ -798,12 +798,12 @@ Delete an object by id, removing it from the service.
 * Api Key Authentication (jwt):
 ```python
 import circuitid_python
-from circuitid_python.api.tags import fax_account_api
+from circuitid_python.api.tags import fax_accounts_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -819,7 +819,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Enter a context with an instance of the API client
 with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = fax_account_api.FaxAccountApi(api_client)
+    api_instance = fax_accounts_api.FaxAccountsApi(api_client)
 
     # example passing only required values which don't have defaults set
     path_params = {
@@ -832,7 +832,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxAccountApi->remove_fax_account: %s\n" % e)
+        print("Exception when calling FaxAccountsApi->remove_fax_account: %s\n" % e)
 ```
 ### Parameters
 

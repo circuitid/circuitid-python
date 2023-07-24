@@ -9,7 +9,7 @@ We are excited to have you on board and are confident that this documentation si
 Happy coding!
 
 
-- API version: 0.47.15
+- API version: 0.47.16
 - Package version: 1.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.circuitid.com/](https://www.circuitid.com/)
@@ -150,10 +150,10 @@ from pprint import pprint
 from circuitid_python.api.tags import accepted_senders_api
 from circuitid_python.models.acceptedsenders import Acceptedsenders
 from circuitid_python.models.response_error import ResponseError
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -183,7 +183,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://cloud9.circuitid.com*
+All URIs are relative to *https://rest.circuitid.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -256,25 +256,25 @@ Class | Method | HTTP request | Description
 *DeveloperAppsApi* | [**get_developer_app**](docs/apis/tags/DeveloperAppsApi.md#get_developer_app) | **get** /developerapps/{id} | Get object by id
 *DeveloperAppsApi* | [**patch_developer_app**](docs/apis/tags/DeveloperAppsApi.md#patch_developer_app) | **patch** /developerapps/{id} | Patch object&#x27;s data
 *DeveloperAppsApi* | [**remove_developer_app**](docs/apis/tags/DeveloperAppsApi.md#remove_developer_app) | **delete** /developerapps/{id} | Delete object by id
-*DirectoriesApi* | [**create_directorie**](docs/apis/tags/DirectoriesApi.md#create_directorie) | **post** /directories | Create a new object
+*DirectoriesApi* | [**createdirectory**](docs/apis/tags/DirectoriesApi.md#createdirectory) | **post** /directories | Create a new object
 *DirectoriesApi* | [**find_directories**](docs/apis/tags/DirectoriesApi.md#find_directories) | **get** /directories | Find multiple objects
-*DirectoriesApi* | [**get_directorie**](docs/apis/tags/DirectoriesApi.md#get_directorie) | **get** /directories/{id} | Get object by id
-*DirectoriesApi* | [**patch_directorie**](docs/apis/tags/DirectoriesApi.md#patch_directorie) | **patch** /directories/{id} | Patch object&#x27;s data
-*DirectoriesApi* | [**remove_directorie**](docs/apis/tags/DirectoriesApi.md#remove_directorie) | **delete** /directories/{id} | Delete object by id
+*DirectoriesApi* | [**getdirectory**](docs/apis/tags/DirectoriesApi.md#getdirectory) | **get** /directories/{id} | Get object by id
+*DirectoriesApi* | [**patchdirectory**](docs/apis/tags/DirectoriesApi.md#patchdirectory) | **patch** /directories/{id} | Patch object&#x27;s data
+*DirectoriesApi* | [**removedirectory**](docs/apis/tags/DirectoriesApi.md#removedirectory) | **delete** /directories/{id} | Delete object by id
 *DomainsApi* | [**create_domain**](docs/apis/tags/DomainsApi.md#create_domain) | **post** /domains | Create a new object
 *DomainsApi* | [**find_domains**](docs/apis/tags/DomainsApi.md#find_domains) | **get** /domains | Find multiple objects
 *DomainsApi* | [**get_domain**](docs/apis/tags/DomainsApi.md#get_domain) | **get** /domains/{id} | Get object by id
 *DomainsApi* | [**patch_domain**](docs/apis/tags/DomainsApi.md#patch_domain) | **patch** /domains/{id} | Patch object&#x27;s data
 *DomainsApi* | [**remove_domain**](docs/apis/tags/DomainsApi.md#remove_domain) | **delete** /domains/{id} | Delete object by id
-*FaxAccountApi* | [**create_fax_account**](docs/apis/tags/FaxAccountApi.md#create_fax_account) | **post** /faxaccounts | Create a new object
-*FaxAccountApi* | [**find_fax_account**](docs/apis/tags/FaxAccountApi.md#find_fax_account) | **get** /faxaccounts | Find multiple objects
-*FaxAccountApi* | [**get_fax_account**](docs/apis/tags/FaxAccountApi.md#get_fax_account) | **get** /faxaccounts/{id} | Get object by id
-*FaxAccountApi* | [**patch_fax_account**](docs/apis/tags/FaxAccountApi.md#patch_fax_account) | **patch** /faxaccounts/{id} | Patch object&#x27;s data
-*FaxAccountApi* | [**remove_fax_account**](docs/apis/tags/FaxAccountApi.md#remove_fax_account) | **delete** /faxaccounts/{id} | Delete object by id
-*FaxesApi* | [**create_faxe**](docs/apis/tags/FaxesApi.md#create_faxe) | **post** /faxes | Create a new object
+*FaxAccountsApi* | [**create_fax_account**](docs/apis/tags/FaxAccountsApi.md#create_fax_account) | **post** /faxaccounts | Create a new object
+*FaxAccountsApi* | [**find_fax_accounts**](docs/apis/tags/FaxAccountsApi.md#find_fax_accounts) | **get** /faxaccounts | Find multiple objects
+*FaxAccountsApi* | [**get_fax_account**](docs/apis/tags/FaxAccountsApi.md#get_fax_account) | **get** /faxaccounts/{id} | Get object by id
+*FaxAccountsApi* | [**patch_fax_account**](docs/apis/tags/FaxAccountsApi.md#patch_fax_account) | **patch** /faxaccounts/{id} | Patch object&#x27;s data
+*FaxAccountsApi* | [**remove_fax_account**](docs/apis/tags/FaxAccountsApi.md#remove_fax_account) | **delete** /faxaccounts/{id} | Delete object by id
+*FaxesApi* | [**create_fax**](docs/apis/tags/FaxesApi.md#create_fax) | **post** /faxes | Create a new object
 *FaxesApi* | [**find_faxes**](docs/apis/tags/FaxesApi.md#find_faxes) | **get** /faxes | Find multiple objects
-*FaxesApi* | [**get_faxe**](docs/apis/tags/FaxesApi.md#get_faxe) | **get** /faxes/{id} | Get object by id
-*FaxesApi* | [**remove_faxe**](docs/apis/tags/FaxesApi.md#remove_faxe) | **delete** /faxes/{id} | Delete object by id
+*FaxesApi* | [**get_fax**](docs/apis/tags/FaxesApi.md#get_fax) | **get** /faxes/{id} | Get object by id
+*FaxesApi* | [**remove_fax**](docs/apis/tags/FaxesApi.md#remove_fax) | **delete** /faxes/{id} | Delete object by id
 *FindNumbersApi* | [**find_find_numbers**](docs/apis/tags/FindNumbersApi.md#find_find_numbers) | **get** /findnumbers | Find multiple objects
 *FirewallApi* | [**create_firewall**](docs/apis/tags/FirewallApi.md#create_firewall) | **post** /firewall | Create a new object
 *FirewallApi* | [**find_firewall**](docs/apis/tags/FirewallApi.md#find_firewall) | **get** /firewall | Find multiple objects
@@ -296,7 +296,7 @@ Class | Method | HTTP request | Description
 *HolidaysApi* | [**get_holiday**](docs/apis/tags/HolidaysApi.md#get_holiday) | **get** /holidays/{id} | Get object by id
 *HolidaysApi* | [**patch_holiday**](docs/apis/tags/HolidaysApi.md#patch_holiday) | **patch** /holidays/{id} | Patch object&#x27;s data
 *HolidaysApi* | [**remove_holiday**](docs/apis/tags/HolidaysApi.md#remove_holiday) | **delete** /holidays/{id} | Delete object by id
-*InfoApi* | [**find_info**](docs/apis/tags/InfoApi.md#find_info) | **get** /info | Get object
+*InfoApi* | [**get_info**](docs/apis/tags/InfoApi.md#get_info) | **get** /info | Get object
 *InvoiceItemsApi* | [**find_invoice_items**](docs/apis/tags/InvoiceItemsApi.md#find_invoice_items) | **get** /invoiceitems | Find multiple objects
 *InvoiceItemsApi* | [**get_invoice_item**](docs/apis/tags/InvoiceItemsApi.md#get_invoice_item) | **get** /invoiceitems/{id} | Get object by id
 *InvoicesApi* | [**find_invoices**](docs/apis/tags/InvoicesApi.md#find_invoices) | **get** /invoices | Find multiple objects

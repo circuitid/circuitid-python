@@ -26,7 +26,7 @@ class TagValues(str, enum.Enum):
     DOMAINS = "Domains"
     DNS_RECORDS = "DNS Records"
     FAXES = "Faxes"
-    FAX_ACCOUNT = "Fax Account"
+    FAX_ACCOUNTS = "Fax Accounts"
     FIND_NUMBERS = "Find Numbers"
     FIREWALL = "Firewall"
     GROUPS = "Groups"

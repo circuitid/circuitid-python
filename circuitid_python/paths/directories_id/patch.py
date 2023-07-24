@@ -215,7 +215,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _patch_directorie_oapg(
+    def _patchdirectory_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -229,7 +229,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _patch_directorie_oapg(
+    def _patchdirectory_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -244,7 +244,7 @@ class BaseApi(api_client.Api):
 
 
     @typing.overload
-    def _patch_directorie_oapg(
+    def _patchdirectory_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -256,7 +256,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _patch_directorie_oapg(
+    def _patchdirectory_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -270,7 +270,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _patch_directorie_oapg(
+    def _patchdirectory_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -349,11 +349,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class PatchDirectorie(BaseApi):
+class Patchdirectory(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def patch_directorie(
+    def patchdirectory(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -367,7 +367,7 @@ class PatchDirectorie(BaseApi):
     ]: ...
 
     @typing.overload
-    def patch_directorie(
+    def patchdirectory(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -382,7 +382,7 @@ class PatchDirectorie(BaseApi):
 
 
     @typing.overload
-    def patch_directorie(
+    def patchdirectory(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -394,7 +394,7 @@ class PatchDirectorie(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def patch_directorie(
+    def patchdirectory(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -408,7 +408,7 @@ class PatchDirectorie(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def patch_directorie(
+    def patchdirectory(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -418,7 +418,7 @@ class PatchDirectorie(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._patch_directorie_oapg(
+        return self._patchdirectory_oapg(
             body=body,
             path_params=path_params,
             content_type=content_type,
@@ -498,7 +498,7 @@ class ApiForpatch(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._patch_directorie_oapg(
+        return self._patchdirectory_oapg(
             body=body,
             path_params=path_params,
             content_type=content_type,

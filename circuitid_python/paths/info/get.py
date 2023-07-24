@@ -176,7 +176,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _find_info_oapg(
+    def _get_info_oapg(
         self,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -187,7 +187,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _find_info_oapg(
+    def _get_info_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -196,7 +196,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _find_info_oapg(
+    def _get_info_oapg(
         self,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -207,7 +207,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _find_info_oapg(
+    def _get_info_oapg(
         self,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -256,11 +256,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class FindInfo(BaseApi):
+class GetInfo(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def find_info(
+    def get_info(
         self,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -271,7 +271,7 @@ class FindInfo(BaseApi):
     ]: ...
 
     @typing.overload
-    def find_info(
+    def get_info(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -280,7 +280,7 @@ class FindInfo(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def find_info(
+    def get_info(
         self,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -291,14 +291,14 @@ class FindInfo(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def find_info(
+    def get_info(
         self,
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._find_info_oapg(
+        return self._get_info_oapg(
             accept_content_types=accept_content_types,
             stream=stream,
             timeout=timeout,
@@ -348,7 +348,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._find_info_oapg(
+        return self._get_info_oapg(
             accept_content_types=accept_content_types,
             stream=stream,
             timeout=timeout,

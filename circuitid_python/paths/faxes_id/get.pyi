@@ -206,7 +206,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _get_faxe_oapg(
+    def _get_fax_oapg(
         self,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -218,7 +218,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _get_faxe_oapg(
+    def _get_fax_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -228,7 +228,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _get_faxe_oapg(
+    def _get_fax_oapg(
         self,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -240,7 +240,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _get_faxe_oapg(
+    def _get_fax_oapg(
         self,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -304,11 +304,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class GetFaxe(BaseApi):
+class GetFax(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def get_faxe(
+    def get_fax(
         self,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -320,7 +320,7 @@ class GetFaxe(BaseApi):
     ]: ...
 
     @typing.overload
-    def get_faxe(
+    def get_fax(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         path_params: RequestPathParams = frozendict.frozendict(),
@@ -330,7 +330,7 @@ class GetFaxe(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def get_faxe(
+    def get_fax(
         self,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -342,7 +342,7 @@ class GetFaxe(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def get_faxe(
+    def get_fax(
         self,
         path_params: RequestPathParams = frozendict.frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
@@ -350,7 +350,7 @@ class GetFaxe(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._get_faxe_oapg(
+        return self._get_fax_oapg(
             path_params=path_params,
             accept_content_types=accept_content_types,
             stream=stream,
@@ -405,7 +405,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._get_faxe_oapg(
+        return self._get_fax_oapg(
             path_params=path_params,
             accept_content_types=accept_content_types,
             stream=stream,

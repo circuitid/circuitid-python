@@ -24,7 +24,7 @@ circuitid_python/api/tags/developer_apps_api.py
 circuitid_python/api/tags/directories_api.py
 circuitid_python/api/tags/dns_records_api.py
 circuitid_python/api/tags/domains_api.py
-circuitid_python/api/tags/fax_account_api.py
+circuitid_python/api/tags/fax_accounts_api.py
 circuitid_python/api/tags/faxes_api.py
 circuitid_python/api/tags/find_numbers_api.py
 circuitid_python/api/tags/firewall_api.py
@@ -171,7 +171,7 @@ docs/apis/tags/DeveloperAppSubscriptionsApi.md
 docs/apis/tags/DeveloperAppsApi.md
 docs/apis/tags/DirectoriesApi.md
 docs/apis/tags/DomainsApi.md
-docs/apis/tags/FaxAccountApi.md
+docs/apis/tags/FaxAccountsApi.md
 docs/apis/tags/FaxesApi.md
 docs/apis/tags/FindNumbersApi.md
 docs/apis/tags/FirewallApi.md

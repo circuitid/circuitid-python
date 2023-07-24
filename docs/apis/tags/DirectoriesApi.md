@@ -1,19 +1,19 @@
 <a id="__pageTop"></a>
 # circuitid_python.api.tags.directories_api.DirectoriesApi
 
-All URIs are relative to *https://cloud9.circuitid.com*
+All URIs are relative to *https://rest.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_directorie**](#create_directorie) | **post** /directories | Create a new object
+[**createdirectory**](#createdirectory) | **post** /directories | Create a new object
 [**find_directories**](#find_directories) | **get** /directories | Find multiple objects
-[**get_directorie**](#get_directorie) | **get** /directories/{id} | Get object by id
-[**patch_directorie**](#patch_directorie) | **patch** /directories/{id} | Patch object&#x27;s data
-[**remove_directorie**](#remove_directorie) | **delete** /directories/{id} | Delete object by id
+[**getdirectory**](#getdirectory) | **get** /directories/{id} | Get object by id
+[**patchdirectory**](#patchdirectory) | **patch** /directories/{id} | Patch object&#x27;s data
+[**removedirectory**](#removedirectory) | **delete** /directories/{id} | Delete object by id
 
-# **create_directorie**
-<a id="create_directorie"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_directorie(directories)
+# **createdirectory**
+<a id="createdirectory"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type createdirectory(directories)
 
 Create a new object
 
@@ -27,10 +27,10 @@ import circuitid_python
 from circuitid_python.api.tags import directories_api
 from circuitid_python.models.directories import Directories
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -52,12 +52,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     body = Directories(None)
     try:
         # Create a new object
-        api_response = api_instance.create_directorie(
+        api_response = api_instance.createdirectory(
             body=body,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling DirectoriesApi->create_directorie: %s\n" % e)
+        print("Exception when calling DirectoriesApi->createdirectory: %s\n" % e)
 ```
 ### Parameters
 
@@ -83,18 +83,18 @@ Type | Description  | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#create_directorie.ApiResponseFor200) | A JSON object containing the new object created
-400 | [ApiResponseFor400](#create_directorie.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#create_directorie.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#create_directorie.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#create_directorie.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#create_directorie.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#create_directorie.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#create_directorie.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#create_directorie.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#create_directorie.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#createdirectory.ApiResponseFor200) | A JSON object containing the new object created
+400 | [ApiResponseFor400](#createdirectory.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#createdirectory.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#createdirectory.ApiResponseFor403) | 
+405 | [ApiResponseFor405](#createdirectory.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#createdirectory.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#createdirectory.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#createdirectory.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#createdirectory.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#createdirectory.ApiResponseFor503) | 
 
-#### create_directorie.ApiResponseFor200
+#### createdirectory.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -108,63 +108,63 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### create_directorie.ApiResponseFor400
+#### createdirectory.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor401
+#### createdirectory.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor403
+#### createdirectory.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor405
+#### createdirectory.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor406
+#### createdirectory.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor408
+#### createdirectory.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor429
+#### createdirectory.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor500
+#### createdirectory.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_directorie.ApiResponseFor503
+#### createdirectory.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -192,10 +192,10 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import directories_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -413,9 +413,9 @@ headers | Unset | headers were not defined |
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **get_directorie**
-<a id="get_directorie"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type get_directorie(id)
+# **getdirectory**
+<a id="getdirectory"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type getdirectory(id)
 
 Get object by id
 
@@ -429,10 +429,10 @@ import circuitid_python
 from circuitid_python.api.tags import directories_api
 from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -456,12 +456,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     }
     try:
         # Get object by id
-        api_response = api_instance.get_directorie(
+        api_response = api_instance.getdirectory(
             path_params=path_params,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling DirectoriesApi->get_directorie: %s\n" % e)
+        print("Exception when calling DirectoriesApi->getdirectory: %s\n" % e)
 ```
 ### Parameters
 
@@ -492,19 +492,19 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#get_directorie.ApiResponseFor200) | A JSON object containing the requested data.
-400 | [ApiResponseFor400](#get_directorie.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#get_directorie.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#get_directorie.ApiResponseFor403) | 
-404 | [ApiResponseFor404](#get_directorie.ApiResponseFor404) | Not Found
-405 | [ApiResponseFor405](#get_directorie.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#get_directorie.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#get_directorie.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#get_directorie.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#get_directorie.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#get_directorie.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#getdirectory.ApiResponseFor200) | A JSON object containing the requested data.
+400 | [ApiResponseFor400](#getdirectory.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#getdirectory.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#getdirectory.ApiResponseFor403) | 
+404 | [ApiResponseFor404](#getdirectory.ApiResponseFor404) | Not Found
+405 | [ApiResponseFor405](#getdirectory.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#getdirectory.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#getdirectory.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#getdirectory.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#getdirectory.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#getdirectory.ApiResponseFor503) | 
 
-#### get_directorie.ApiResponseFor200
+#### getdirectory.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -518,28 +518,28 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### get_directorie.ApiResponseFor400
+#### getdirectory.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor401
+#### getdirectory.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor403
+#### getdirectory.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor404
+#### getdirectory.ApiResponseFor404
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -552,42 +552,42 @@ Type | Description  | Notes
 [**ResponseError**](../../models/ResponseError.md) |  | 
 
 
-#### get_directorie.ApiResponseFor405
+#### getdirectory.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor406
+#### getdirectory.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor408
+#### getdirectory.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor429
+#### getdirectory.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor500
+#### getdirectory.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_directorie.ApiResponseFor503
+#### getdirectory.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -600,9 +600,9 @@ headers | Unset | headers were not defined |
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **patch_directorie**
-<a id="patch_directorie"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_directorie(iddirectories)
+# **patchdirectory**
+<a id="patchdirectory"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type patchdirectory(iddirectories)
 
 Patch object's data
 
@@ -616,10 +616,10 @@ import circuitid_python
 from circuitid_python.api.tags import directories_api
 from circuitid_python.models.directories import Directories
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -644,13 +644,13 @@ with circuitid_python.ApiClient(configuration) as api_client:
     body = Directories(None)
     try:
         # Patch object's data
-        api_response = api_instance.patch_directorie(
+        api_response = api_instance.patchdirectory(
             path_params=path_params,
             body=body,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling DirectoriesApi->patch_directorie: %s\n" % e)
+        print("Exception when calling DirectoriesApi->patchdirectory: %s\n" % e)
 ```
 ### Parameters
 
@@ -691,18 +691,18 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#patch_directorie.ApiResponseFor200) | A JSON object containing the modified data.
-400 | [ApiResponseFor400](#patch_directorie.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#patch_directorie.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#patch_directorie.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#patch_directorie.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#patch_directorie.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#patch_directorie.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#patch_directorie.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#patch_directorie.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#patch_directorie.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#patchdirectory.ApiResponseFor200) | A JSON object containing the modified data.
+400 | [ApiResponseFor400](#patchdirectory.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#patchdirectory.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#patchdirectory.ApiResponseFor403) | 
+405 | [ApiResponseFor405](#patchdirectory.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#patchdirectory.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#patchdirectory.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#patchdirectory.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#patchdirectory.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#patchdirectory.ApiResponseFor503) | 
 
-#### patch_directorie.ApiResponseFor200
+#### patchdirectory.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -716,63 +716,63 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### patch_directorie.ApiResponseFor400
+#### patchdirectory.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor401
+#### patchdirectory.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor403
+#### patchdirectory.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor405
+#### patchdirectory.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor406
+#### patchdirectory.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor408
+#### patchdirectory.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor429
+#### patchdirectory.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor500
+#### patchdirectory.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### patch_directorie.ApiResponseFor503
+#### patchdirectory.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -785,9 +785,9 @@ headers | Unset | headers were not defined |
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **remove_directorie**
-<a id="remove_directorie"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type remove_directorie(id)
+# **removedirectory**
+<a id="removedirectory"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type removedirectory(id)
 
 Delete object by id
 
@@ -800,10 +800,10 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import directories_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -827,12 +827,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     }
     try:
         # Delete object by id
-        api_response = api_instance.remove_directorie(
+        api_response = api_instance.removedirectory(
             path_params=path_params,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling DirectoriesApi->remove_directorie: %s\n" % e)
+        print("Exception when calling DirectoriesApi->removedirectory: %s\n" % e)
 ```
 ### Parameters
 
@@ -863,18 +863,18 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#remove_directorie.ApiResponseFor200) | A JSON object containing the deleted data.
-400 | [ApiResponseFor400](#remove_directorie.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#remove_directorie.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#remove_directorie.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#remove_directorie.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#remove_directorie.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#remove_directorie.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#remove_directorie.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#remove_directorie.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#remove_directorie.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#removedirectory.ApiResponseFor200) | A JSON object containing the deleted data.
+400 | [ApiResponseFor400](#removedirectory.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#removedirectory.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#removedirectory.ApiResponseFor403) | 
+405 | [ApiResponseFor405](#removedirectory.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#removedirectory.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#removedirectory.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#removedirectory.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#removedirectory.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#removedirectory.ApiResponseFor503) | 
 
-#### remove_directorie.ApiResponseFor200
+#### removedirectory.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -888,63 +888,63 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### remove_directorie.ApiResponseFor400
+#### removedirectory.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor401
+#### removedirectory.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor403
+#### removedirectory.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor405
+#### removedirectory.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor406
+#### removedirectory.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor408
+#### removedirectory.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor429
+#### removedirectory.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor500
+#### removedirectory.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_directorie.ApiResponseFor503
+#### removedirectory.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |

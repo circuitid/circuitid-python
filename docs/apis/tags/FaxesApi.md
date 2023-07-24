@@ -1,18 +1,18 @@
 <a id="__pageTop"></a>
 # circuitid_python.api.tags.faxes_api.FaxesApi
 
-All URIs are relative to *https://cloud9.circuitid.com*
+All URIs are relative to *https://rest.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_faxe**](#create_faxe) | **post** /faxes | Create a new object
+[**create_fax**](#create_fax) | **post** /faxes | Create a new object
 [**find_faxes**](#find_faxes) | **get** /faxes | Find multiple objects
-[**get_faxe**](#get_faxe) | **get** /faxes/{id} | Get object by id
-[**remove_faxe**](#remove_faxe) | **delete** /faxes/{id} | Delete object by id
+[**get_fax**](#get_fax) | **get** /faxes/{id} | Get object by id
+[**remove_fax**](#remove_fax) | **delete** /faxes/{id} | Delete object by id
 
-# **create_faxe**
-<a id="create_faxe"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_faxe(faxes)
+# **create_fax**
+<a id="create_fax"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type create_fax(faxes)
 
 Create a new object
 
@@ -26,10 +26,10 @@ import circuitid_python
 from circuitid_python.api.tags import faxes_api
 from circuitid_python.models.faxes import Faxes
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -51,12 +51,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     body = Faxes(None)
     try:
         # Create a new object
-        api_response = api_instance.create_faxe(
+        api_response = api_instance.create_fax(
             body=body,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxesApi->create_faxe: %s\n" % e)
+        print("Exception when calling FaxesApi->create_fax: %s\n" % e)
 ```
 ### Parameters
 
@@ -82,18 +82,18 @@ Type | Description  | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#create_faxe.ApiResponseFor200) | A JSON object containing the new object created
-400 | [ApiResponseFor400](#create_faxe.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#create_faxe.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#create_faxe.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#create_faxe.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#create_faxe.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#create_faxe.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#create_faxe.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#create_faxe.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#create_faxe.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#create_fax.ApiResponseFor200) | A JSON object containing the new object created
+400 | [ApiResponseFor400](#create_fax.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#create_fax.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#create_fax.ApiResponseFor403) | 
+405 | [ApiResponseFor405](#create_fax.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#create_fax.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#create_fax.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#create_fax.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#create_fax.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#create_fax.ApiResponseFor503) | 
 
-#### create_faxe.ApiResponseFor200
+#### create_fax.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -107,63 +107,63 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### create_faxe.ApiResponseFor400
+#### create_fax.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor401
+#### create_fax.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor403
+#### create_fax.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor405
+#### create_fax.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor406
+#### create_fax.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor408
+#### create_fax.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor429
+#### create_fax.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor500
+#### create_fax.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### create_faxe.ApiResponseFor503
+#### create_fax.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -191,10 +191,10 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import faxes_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -412,9 +412,9 @@ headers | Unset | headers were not defined |
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **get_faxe**
-<a id="get_faxe"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type get_faxe(id)
+# **get_fax**
+<a id="get_fax"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type get_fax(id)
 
 Get object by id
 
@@ -428,10 +428,10 @@ import circuitid_python
 from circuitid_python.api.tags import faxes_api
 from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -455,12 +455,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     }
     try:
         # Get object by id
-        api_response = api_instance.get_faxe(
+        api_response = api_instance.get_fax(
             path_params=path_params,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxesApi->get_faxe: %s\n" % e)
+        print("Exception when calling FaxesApi->get_fax: %s\n" % e)
 ```
 ### Parameters
 
@@ -491,19 +491,19 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#get_faxe.ApiResponseFor200) | A JSON object containing the requested data.
-400 | [ApiResponseFor400](#get_faxe.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#get_faxe.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#get_faxe.ApiResponseFor403) | 
-404 | [ApiResponseFor404](#get_faxe.ApiResponseFor404) | Not Found
-405 | [ApiResponseFor405](#get_faxe.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#get_faxe.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#get_faxe.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#get_faxe.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#get_faxe.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#get_faxe.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#get_fax.ApiResponseFor200) | A JSON object containing the requested data.
+400 | [ApiResponseFor400](#get_fax.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#get_fax.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#get_fax.ApiResponseFor403) | 
+404 | [ApiResponseFor404](#get_fax.ApiResponseFor404) | Not Found
+405 | [ApiResponseFor405](#get_fax.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#get_fax.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#get_fax.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#get_fax.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#get_fax.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#get_fax.ApiResponseFor503) | 
 
-#### get_faxe.ApiResponseFor200
+#### get_fax.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -517,28 +517,28 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### get_faxe.ApiResponseFor400
+#### get_fax.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor401
+#### get_fax.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor403
+#### get_fax.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor404
+#### get_fax.ApiResponseFor404
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -551,42 +551,42 @@ Type | Description  | Notes
 [**ResponseError**](../../models/ResponseError.md) |  | 
 
 
-#### get_faxe.ApiResponseFor405
+#### get_fax.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor406
+#### get_fax.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor408
+#### get_fax.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor429
+#### get_fax.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor500
+#### get_fax.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### get_faxe.ApiResponseFor503
+#### get_fax.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -599,9 +599,9 @@ headers | Unset | headers were not defined |
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **remove_faxe**
-<a id="remove_faxe"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type remove_faxe(id)
+# **remove_fax**
+<a id="remove_fax"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type remove_fax(id)
 
 Delete object by id
 
@@ -614,10 +614,10 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import faxes_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://cloud9.circuitid.com
+# Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://cloud9.circuitid.com"
+    host = "https://rest.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -641,12 +641,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     }
     try:
         # Delete object by id
-        api_response = api_instance.remove_faxe(
+        api_response = api_instance.remove_fax(
             path_params=path_params,
         )
         pprint(api_response)
     except circuitid_python.ApiException as e:
-        print("Exception when calling FaxesApi->remove_faxe: %s\n" % e)
+        print("Exception when calling FaxesApi->remove_fax: %s\n" % e)
 ```
 ### Parameters
 
@@ -677,18 +677,18 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#remove_faxe.ApiResponseFor200) | A JSON object containing the deleted data.
-400 | [ApiResponseFor400](#remove_faxe.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#remove_faxe.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#remove_faxe.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#remove_faxe.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#remove_faxe.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#remove_faxe.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#remove_faxe.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#remove_faxe.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#remove_faxe.ApiResponseFor503) | 
+200 | [ApiResponseFor200](#remove_fax.ApiResponseFor200) | A JSON object containing the deleted data.
+400 | [ApiResponseFor400](#remove_fax.ApiResponseFor400) | 
+401 | [ApiResponseFor401](#remove_fax.ApiResponseFor401) | 
+403 | [ApiResponseFor403](#remove_fax.ApiResponseFor403) | 
+405 | [ApiResponseFor405](#remove_fax.ApiResponseFor405) | 
+406 | [ApiResponseFor406](#remove_fax.ApiResponseFor406) | 
+408 | [ApiResponseFor408](#remove_fax.ApiResponseFor408) | 
+429 | [ApiResponseFor429](#remove_fax.ApiResponseFor429) | 
+500 | [ApiResponseFor500](#remove_fax.ApiResponseFor500) | 
+503 | [ApiResponseFor503](#remove_fax.ApiResponseFor503) | 
 
-#### remove_faxe.ApiResponseFor200
+#### remove_fax.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -702,63 +702,63 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### remove_faxe.ApiResponseFor400
+#### remove_fax.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor401
+#### remove_fax.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor403
+#### remove_fax.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor405
+#### remove_fax.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor406
+#### remove_fax.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor408
+#### remove_fax.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor429
+#### remove_fax.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor500
+#### remove_fax.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
 body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
-#### remove_faxe.ApiResponseFor503
+#### remove_fax.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
