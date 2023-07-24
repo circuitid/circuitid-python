@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.faxes.Faxes
+# circuitid_python.CircuitIDModel.faxes.Faxes
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

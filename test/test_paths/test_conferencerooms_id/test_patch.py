@@ -11,9 +11,9 @@ from unittest.mock import patch
 
 import urllib3
 
-import circuitid-python
-from circuitid-python.paths.conferencerooms_id import patch  # noqa: E501
-from circuitid-python import configuration, schemas, api_client
+import circuitid_python
+from circuitid_python.paths.conferencerooms_id import patch  # noqa: E501
+from circuitid_python import configuration, schemas, api_client
 
 from .. import ApiTestMixin
 

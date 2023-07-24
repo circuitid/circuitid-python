@@ -8,7 +8,7 @@ stages:
   script:
    - pip install -r requirements.txt
    - pip install -r test-requirements.txt
-   - pytest --cov=circuitid-python
+   - pytest --cov=circuitid_python
 
 test-3.5:
   extends: .tests

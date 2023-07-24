@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.developerapps.Developerapps
+# circuitid_python.CircuitIDModel.developerapps.Developerapps
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

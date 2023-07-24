@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.users.Users
+# circuitid_python.CircuitIDModel.users.Users
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

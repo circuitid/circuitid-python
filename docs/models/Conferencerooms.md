@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.conferencerooms.Conferencerooms
+# circuitid_python.CircuitIDModel.conferencerooms.Conferencerooms
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

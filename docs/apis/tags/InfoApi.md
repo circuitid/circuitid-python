@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
-# circuitid-python.CircuitID.tags.info_api.InfoApi
+# circuitid_python.rest.tags.info_api.InfoApi
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,13 +19,13 @@ Returns an object containing the requested information.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import info_api
+import circuitid_python
+from circuitid_python.rest.tags import info_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -39,7 +39,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = info_api.InfoApi(api_client)
 
@@ -48,7 +48,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
         # Get object
         api_response = api_instance.find_info()
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling InfoApi->find_info: %s\n" % e)
 ```
 ### Parameters

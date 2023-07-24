@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.licenses.Licenses
+# circuitid_python.CircuitIDModel.licenses.Licenses
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

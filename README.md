@@ -8,19 +8,8 @@ We are excited to have you on board and are confident that this documentation si
                 
 Happy coding!
 
-# Clients
 
-Discover the convenience of Circuit ID's readily available Client API libraries, enabling you to initiate seamless integration without delay. These pre-built libraries are designed for immediate use, empowering you to leverage the API's functionalities effortlessly. Get started with a Circuit ID&reg; Client library and streamline your development process today.
-
-- <a href='https://github.com/circuitid/circuitid-node' target='_blank'>Node</a>
-- <a href='https://github.com/circuitid/circuitid-python' target='_blank'>Python</a>
-- <a href='https://github.com/circuitid/circuitid-java' target='_blank'>Java</a>
-- <a href='https://github.com/circuitid/circuitid-csharp' target='_blank'>C Sharp</a>
-- <a href='https://github.com/circuitid/circuitid-ruby' target='_blank'>Ruby</a>
-- <a href='https://github.com/circuitid/circuitid-go' target='_blank'>Go</a>
-
-
-- API version: 0.47.14
+- API version: 0.47.15
 - Package version: 1.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.circuitid.com/](https://www.circuitid.com/)
@@ -132,7 +121,7 @@ pip install git+https://github.com/circuitid/circuitid-python.git
 
 Then import the package:
 ```python
-import circuitid-python
+import circuitid_python
 ```
 
 ### Setuptools
@@ -146,7 +135,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import circuitid-python
+import circuitid_python
 ```
 
 ## Getting Started
@@ -156,15 +145,15 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 
 import time
-import circuitid-python
+import circuitid_python
 from pprint import pprint
-from circuitid-python.CircuitID.tags import accepted_senders_api
-from circuitid-python.CircuitID.acceptedsenders import Acceptedsenders
-from circuitid-python.CircuitID.response_error import ResponseError
-# Defining the host is optional and defaults to https://rest.circuitid.com
+from circuitid_python.rest.tags import accepted_senders_api
+from circuitid_python.CircuitIDModel.acceptedsenders import Acceptedsenders
+from circuitid_python.CircuitIDModel.response_error import ResponseError
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -179,7 +168,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accepted_senders_api.AcceptedSendersApi(api_client)
     acceptedsenders = Acceptedsenders(None) # Acceptedsenders | The JSON object that will be posted to the REST API endpoint.
@@ -188,13 +177,13 @@ with circuitid-python.ApiClient(configuration) as api_client:
         # Create a new object
         api_response = api_instance.create_accepted_sender(acceptedsenders)
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling AcceptedSendersApi->create_accepted_sender: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -462,20 +451,20 @@ Authentication schemes defined for the API:
 
 
 ## Notes for Large OpenAPI documents
-If the OpenAPI document is large, imports in circuitid-python.apis and circuitid-python.models may fail with a
+If the OpenAPI document is large, imports in circuitid_python.apis and circuitid_python.models may fail with a
 RecursionError indicating the maximum recursion limit has been exceeded. In that case, there are a couple of solutions:
 
 Solution 1:
 Use specific imports for apis and models like:
-- `from circuitid-python.CircuitID.default_api import DefaultApi`
-- `from circuitid-python.CircuitID.pet import Pet`
+- `from circuitid_python.rest.default_api import DefaultApi`
+- `from circuitid_python.CircuitIDModel.pet import Pet`
 
 Solution 1:
 Before importing the package, adjust the maximum recursion limit as shown below:
 ```
 import sys
 sys.setrecursionlimit(1500)
-import circuitid-python
-from circuitid-python.apis import *
-from circuitid-python.models import *
+import circuitid_python
+from circuitid_python.apis import *
+from circuitid_python.models import *
 ```

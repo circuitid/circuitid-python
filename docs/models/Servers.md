@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.servers.Servers
+# circuitid_python.CircuitIDModel.servers.Servers
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

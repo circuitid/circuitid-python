@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.directories.Directories
+# circuitid_python.CircuitIDModel.directories.Directories
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

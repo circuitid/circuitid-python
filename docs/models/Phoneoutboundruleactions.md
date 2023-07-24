@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.phoneoutboundruleactions.Phoneoutboundruleactions
+# circuitid_python.CircuitIDModel.phoneoutboundruleactions.Phoneoutboundruleactions
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

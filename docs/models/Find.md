@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.find.Find
+# circuitid_python.CircuitIDModel.find.Find
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

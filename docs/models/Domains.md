@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.domains.Domains
+# circuitid_python.CircuitIDModel.domains.Domains
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

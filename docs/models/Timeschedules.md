@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.timeschedules.Timeschedules
+# circuitid_python.CircuitIDModel.timeschedules.Timeschedules
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.chatrooms.Chatrooms
+# circuitid_python.CircuitIDModel.chatrooms.Chatrooms
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

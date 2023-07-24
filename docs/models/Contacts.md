@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.contacts.Contacts
+# circuitid_python.CircuitIDModel.contacts.Contacts
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

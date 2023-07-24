@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.response_date.ResponseDate
+# circuitid_python.CircuitIDModel.response_date.ResponseDate
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

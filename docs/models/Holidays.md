@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.holidays.Holidays
+# circuitid_python.CircuitIDModel.holidays.Holidays
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

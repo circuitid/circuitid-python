@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
-# circuitid-python.CircuitID.tags.authentication_api.AuthenticationApi
+# circuitid_python.rest.tags.authentication_api.AuthenticationApi
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,14 +19,14 @@ Add a new object to the system.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import authentication_api
-from circuitid-python.CircuitID.authentication import Authentication
+import circuitid_python
+from circuitid_python.rest.tags import authentication_api
+from circuitid_python.CircuitIDModel.authentication import Authentication
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -40,7 +40,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = authentication_api.AuthenticationApi(api_client)
 
@@ -52,7 +52,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
             body=body,
         )
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling AuthenticationApi->create_authentication: %s\n" % e)
 ```
 ### Parameters

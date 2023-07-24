@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.firewall.Firewall
+# circuitid_python.CircuitIDModel.firewall.Firewall
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

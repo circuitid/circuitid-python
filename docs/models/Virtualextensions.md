@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.virtualextensions.Virtualextensions
+# circuitid_python.CircuitIDModel.virtualextensions.Virtualextensions
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

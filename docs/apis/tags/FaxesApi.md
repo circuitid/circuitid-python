@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
-# circuitid-python.CircuitID.tags.faxes_api.FaxesApi
+# circuitid_python.rest.tags.faxes_api.FaxesApi
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,14 +22,14 @@ Add a new object to the system.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import faxes_api
-from circuitid-python.CircuitID.faxes import Faxes
+import circuitid_python
+from circuitid_python.rest.tags import faxes_api
+from circuitid_python.CircuitIDModel.faxes import Faxes
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -43,7 +43,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = faxes_api.FaxesApi(api_client)
 
@@ -55,7 +55,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
             body=body,
         )
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling FaxesApi->create_faxe: %s\n" % e)
 ```
 ### Parameters
@@ -188,13 +188,13 @@ Search and retrieve multiple objects simultaneously.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import faxes_api
+import circuitid_python
+from circuitid_python.rest.tags import faxes_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -208,7 +208,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = faxes_api.FaxesApi(api_client)
 
@@ -228,7 +228,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
             query_params=query_params,
         )
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling FaxesApi->find_faxes: %s\n" % e)
 ```
 ### Parameters
@@ -424,14 +424,14 @@ Get an object from the REST API Endpoint by its unique id.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import faxes_api
-from circuitid-python.CircuitID.response_error import ResponseError
+import circuitid_python
+from circuitid_python.rest.tags import faxes_api
+from circuitid_python.CircuitIDModel.response_error import ResponseError
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -445,7 +445,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = faxes_api.FaxesApi(api_client)
 
@@ -459,7 +459,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
             path_params=path_params,
         )
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling FaxesApi->get_faxe: %s\n" % e)
 ```
 ### Parameters
@@ -611,13 +611,13 @@ Delete an object by id, removing it from the service.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import faxes_api
+import circuitid_python
+from circuitid_python.rest.tags import faxes_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -631,7 +631,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = faxes_api.FaxesApi(api_client)
 
@@ -645,7 +645,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
             path_params=path_params,
         )
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling FaxesApi->remove_faxe: %s\n" % e)
 ```
 ### Parameters

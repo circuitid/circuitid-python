@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.conversationmessages.Conversationmessages
+# circuitid_python.CircuitIDModel.conversationmessages.Conversationmessages
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

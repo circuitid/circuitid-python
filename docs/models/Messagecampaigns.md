@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.messagecampaigns.Messagecampaigns
+# circuitid_python.CircuitIDModel.messagecampaigns.Messagecampaigns
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

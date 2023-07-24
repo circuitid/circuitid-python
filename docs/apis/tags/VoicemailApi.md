@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
-# circuitid-python.CircuitID.tags.voicemail_api.VoicemailApi
+# circuitid_python.rest.tags.voicemail_api.VoicemailApi
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,13 +20,13 @@ Search and retrieve multiple objects simultaneously.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import voicemail_api
+import circuitid_python
+from circuitid_python.rest.tags import voicemail_api
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -40,7 +40,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = voicemail_api.VoicemailApi(api_client)
 
@@ -60,7 +60,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
             query_params=query_params,
         )
         pprint(api_response)
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling VoicemailApi->find_voicemail: %s\n" % e)
 ```
 ### Parameters
@@ -247,14 +247,14 @@ Get an object from the REST API Endpoint by its unique id.
 
 * Api Key Authentication (jwt):
 ```python
-import circuitid-python
-from circuitid-python.CircuitID.tags import voicemail_api
-from circuitid-python.CircuitID.response_error import ResponseError
+import circuitid_python
+from circuitid_python.rest.tags import voicemail_api
+from circuitid_python.CircuitIDModel.response_error import ResponseError
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = circuitid-python.Configuration(
-    host = "https://rest.circuitid.com"
+configuration = circuitid_python.Configuration(
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -268,7 +268,7 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['jwt'] = 'Bearer'
 # Enter a context with an instance of the API client
-with circuitid-python.ApiClient(configuration) as api_client:
+with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = voicemail_api.VoicemailApi(api_client)
 
@@ -281,7 +281,7 @@ with circuitid-python.ApiClient(configuration) as api_client:
         api_response = api_instance.get_voicemail(
             path_params=path_params,
         )
-    except circuitid-python.ApiException as e:
+    except circuitid_python.ApiException as e:
         print("Exception when calling VoicemailApi->get_voicemail: %s\n" % e)
 ```
 ### Parameters

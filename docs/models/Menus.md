@@ -1,4 +1,4 @@
-# circuitid-python.CircuitID.menus.Menus
+# circuitid_python.CircuitIDModel.menus.Menus
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
