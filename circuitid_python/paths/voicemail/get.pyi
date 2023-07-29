@@ -25,60 +25,82 @@ import frozendict  # noqa: F401
 
 from circuitid_python import schemas  # noqa: F401
 
+from circuitid_python.models.response_error import ResponseError
+
 # Query params
-SearchSchema = schemas.AnyTypeSchema
+SearchSchema = schemas.StrSchema
+LimitSchema = schemas.Int32Schema
+SkipSchema = schemas.Int32Schema
+SortSchema = schemas.DictSchema
 
 
-class LimitSchema(
-    schemas.Int32Base,
-    schemas.AnyTypeSchema,
+class SelectSchema(
+    schemas.ListSchema
 ):
 
 
     class MetaOapg:
-        format = 'int32'
-
+        items = schemas.StrSchema
 
     def __new__(
         cls,
-        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
         _configuration: typing.Optional[schemas.Configuration] = None,
-        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-    ) -> 'LimitSchema':
+    ) -> 'SelectSchema':
         return super().__new__(
             cls,
-            *_args,
+            _arg,
             _configuration=_configuration,
-            **kwargs,
         )
 
+    def __getitem__(self, i: int) -> MetaOapg.items:
+        return super().__getitem__(i)
 
-class SkipSchema(
-    schemas.Int32Base,
-    schemas.AnyTypeSchema,
+
+class ModelOrSchema(
+    schemas.ListSchema
 ):
 
 
     class MetaOapg:
-        format = 'int32'
-
+        items = schemas.DictSchema
 
     def __new__(
         cls,
-        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, ]]],
         _configuration: typing.Optional[schemas.Configuration] = None,
-        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-    ) -> 'SkipSchema':
+    ) -> 'ModelOrSchema':
         return super().__new__(
             cls,
-            *_args,
+            _arg,
             _configuration=_configuration,
-            **kwargs,
         )
-SortSchema = schemas.AnyTypeSchema
-SelectSchema = schemas.AnyTypeSchema
-ModelOrSchema = schemas.AnyTypeSchema
-ModelAndSchema = schemas.AnyTypeSchema
+
+    def __getitem__(self, i: int) -> MetaOapg.items:
+        return super().__getitem__(i)
+
+
+class ModelAndSchema(
+    schemas.ListSchema
+):
+
+
+    class MetaOapg:
+        items = schemas.DictSchema
+
+    def __new__(
+        cls,
+        _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, ]]],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+    ) -> 'ModelAndSchema':
+        return super().__new__(
+            cls,
+            _arg,
+            _configuration=_configuration,
+        )
+
+    def __getitem__(self, i: int) -> MetaOapg.items:
+        return super().__getitem__(i)
 RequestRequiredQueryParams = typing_extensions.TypedDict(
     'RequestRequiredQueryParams',
     {
@@ -87,13 +109,13 @@ RequestRequiredQueryParams = typing_extensions.TypedDict(
 RequestOptionalQueryParams = typing_extensions.TypedDict(
     'RequestOptionalQueryParams',
     {
-        '$search': typing.Union[SearchSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-        '$limit': typing.Union[LimitSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-        '$skip': typing.Union[SkipSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-        '$sort': typing.Union[SortSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-        '$select': typing.Union[SelectSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-        '$or': typing.Union[ModelOrSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-        '$and': typing.Union[ModelAndSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        '$search': typing.Union[SearchSchema, str, ],
+        '$limit': typing.Union[LimitSchema, decimal.Decimal, int, ],
+        '$skip': typing.Union[SkipSchema, decimal.Decimal, int, ],
+        '$sort': typing.Union[SortSchema, dict, frozendict.frozendict, ],
+        '$select': typing.Union[SelectSchema, list, tuple, ],
+        '$or': typing.Union[ModelOrSchema, list, tuple, ],
+        '$and': typing.Union[ModelAndSchema, list, tuple, ],
     },
     total=False
 )
@@ -145,7 +167,119 @@ request_query__and = api_client.QueryParameter(
     schema=ModelAndSchema,
     explode=True,
 )
-SchemaFor200ResponseBodyApplicationJson = schemas.AnyTypeSchema
+
+
+class SchemaFor200ResponseBodyApplicationJson(
+    schemas.DictSchema
+):
+
+
+    class MetaOapg:
+        required = {
+            "total",
+            "data",
+            "limit",
+            "skip",
+        }
+        
+        class properties:
+            total = schemas.Int32Schema
+            limit = schemas.Int32Schema
+            skip = schemas.Int32Schema
+            
+            
+            class data(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.AnyTypeSchema
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]]],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'data':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
+            __annotations__ = {
+                "total": total,
+                "limit": limit,
+                "skip": skip,
+                "data": data,
+            }
+    
+    total: MetaOapg.properties.total
+    data: MetaOapg.properties.data
+    limit: MetaOapg.properties.limit
+    skip: MetaOapg.properties.skip
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["total"]) -> MetaOapg.properties.total: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["limit"]) -> MetaOapg.properties.limit: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["skip"]) -> MetaOapg.properties.skip: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["data"]) -> MetaOapg.properties.data: ...
+    
+    @typing.overload
+    def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+    
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["total", "limit", "skip", "data", ], str]):
+        # dict_instance[name] accessor
+        return super().__getitem__(name)
+    
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["total"]) -> MetaOapg.properties.total: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["limit"]) -> MetaOapg.properties.limit: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["skip"]) -> MetaOapg.properties.skip: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["data"]) -> MetaOapg.properties.data: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+    
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["total", "limit", "skip", "data", ], str]):
+        return super().get_item_oapg(name)
+    
+
+    def __new__(
+        cls,
+        *_args: typing.Union[dict, frozendict.frozendict, ],
+        total: typing.Union[MetaOapg.properties.total, decimal.Decimal, int, ],
+        data: typing.Union[MetaOapg.properties.data, list, tuple, ],
+        limit: typing.Union[MetaOapg.properties.limit, decimal.Decimal, int, ],
+        skip: typing.Union[MetaOapg.properties.skip, decimal.Decimal, int, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'SchemaFor200ResponseBodyApplicationJson':
+        return super().__new__(
+            cls,
+            *_args,
+            total=total,
+            data=data,
+            limit=limit,
+            skip=skip,
+            _configuration=_configuration,
+            **kwargs,
+        )
 
 
 @dataclass
@@ -164,113 +298,176 @@ _response_for_200 = api_client.OpenApiResponse(
             schema=SchemaFor200ResponseBodyApplicationJson),
     },
 )
+SchemaFor400ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor400(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor400ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_400 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor400,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor400ResponseBodyApplicationJson),
+    },
 )
+SchemaFor401ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor401(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor401ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_401 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor401,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor401ResponseBodyApplicationJson),
+    },
 )
+SchemaFor403ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor403(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor403ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_403 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor403,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor403ResponseBodyApplicationJson),
+    },
 )
+SchemaFor405ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor405(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor405ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_405 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor405,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor405ResponseBodyApplicationJson),
+    },
 )
+SchemaFor406ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor406(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor406ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_406 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor406,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor406ResponseBodyApplicationJson),
+    },
 )
+SchemaFor408ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor408(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor408ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_408 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor408,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor408ResponseBodyApplicationJson),
+    },
 )
+SchemaFor429ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor429(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor429ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_429 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor429,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor429ResponseBodyApplicationJson),
+    },
 )
+SchemaFor500ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor500(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor500ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_500 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor500,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor500ResponseBodyApplicationJson),
+    },
 )
+SchemaFor503ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor503(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor503ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_503 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor503,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor503ResponseBodyApplicationJson),
+    },
 )
 _all_accept_content_types = (
     'application/json',

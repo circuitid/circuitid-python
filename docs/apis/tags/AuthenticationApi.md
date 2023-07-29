@@ -21,6 +21,9 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import authentication_api
+from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.authentication import Authentication
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -45,7 +48,11 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = authentication_api.AuthenticationApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Authentication(None)
+    body = Authentication(
+        username="username_example",
+        password="password_example",
+        strategy="local",
+    )
     try:
         # Create a new object
         api_response = api_instance.create_authentication(
@@ -80,15 +87,15 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#create_authentication.ApiResponseFor200) | A JSON object containing the new object created
-400 | [ApiResponseFor400](#create_authentication.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#create_authentication.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#create_authentication.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#create_authentication.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#create_authentication.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#create_authentication.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#create_authentication.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#create_authentication.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#create_authentication.ApiResponseFor503) | 
+400 | [ApiResponseFor400](#create_authentication.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#create_authentication.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#create_authentication.ApiResponseFor403) | Forbidden
+405 | [ApiResponseFor405](#create_authentication.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#create_authentication.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#create_authentication.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#create_authentication.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#create_authentication.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#create_authentication.ApiResponseFor503) | Unavailable
 
 #### create_authentication.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -104,68 +111,130 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Authentication]({{complexTypePrefix}}Authentication.md) | [**Authentication**]({{complexTypePrefix}}Authentication.md) | [**Authentication**]({{complexTypePrefix}}Authentication.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
+
 #### create_authentication.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_authentication.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 

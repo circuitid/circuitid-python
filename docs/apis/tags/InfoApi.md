@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **get_info**
 <a id="get_info"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type get_info()
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} get_info()
 
 Get object
 
@@ -21,6 +21,7 @@ Returns an object containing the requested information.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import info_api
+from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -60,15 +61,15 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#get_info.ApiResponseFor200) | A JSON object containing the requested data
-400 | [ApiResponseFor400](#get_info.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#get_info.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#get_info.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#get_info.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#get_info.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#get_info.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#get_info.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#get_info.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#get_info.ApiResponseFor503) | 
+400 | [ApiResponseFor400](#get_info.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#get_info.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#get_info.ApiResponseFor403) | Forbidden
+405 | [ApiResponseFor405](#get_info.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#get_info.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#get_info.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#get_info.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#get_info.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#get_info.ApiResponseFor503) | Unavailable
 
 #### get_info.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -82,70 +83,124 @@ headers | Unset | headers were not defined |
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 #### get_info.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_info.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 

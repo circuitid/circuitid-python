@@ -9,7 +9,7 @@ We are excited to have you on board and are confident that this documentation si
 Happy coding!
 
 
-- API version: 0.47.16
+- API version: 0.47.19
 - Package version: 1.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.circuitid.com/](https://www.circuitid.com/)
@@ -149,7 +149,9 @@ import circuitid_python
 from pprint import pprint
 from circuitid_python.api.tags import accepted_senders_api
 from circuitid_python.models.acceptedsenders import Acceptedsenders
+from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.response_users import ResponseUsers
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
@@ -171,7 +173,12 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accepted_senders_api.AcceptedSendersApi(api_client)
-    acceptedsenders = Acceptedsenders(None) # Acceptedsenders | The JSON object that will be posted to the REST API endpoint.
+    acceptedsenders = Acceptedsenders(
+        object="object_example",
+        service="service_example",
+        service_ref="service_ref_example",
+        ref="users",
+    ) # Acceptedsenders | The JSON object that will be posted to the REST API endpoint.
 
     try:
         # Create a new object

@@ -28,11 +28,11 @@ from circuitid_python import schemas  # noqa: F401
 from circuitid_python.models.response_error import ResponseError
 
 # Path params
-IdSchema = schemas.AnyTypeSchema
+IdSchema = schemas.StrSchema
 RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
-        'id': typing.Union[IdSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        'id': typing.Union[IdSchema, str, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -70,41 +70,62 @@ _response_for_200 = api_client.OpenApiResponse(
         'application/json': api_client.MediaType(),
     },
 )
+SchemaFor400ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor400(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor400ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_400 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor400,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor400ResponseBodyApplicationJson),
+    },
 )
+SchemaFor401ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor401(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor401ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_401 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor401,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor401ResponseBodyApplicationJson),
+    },
 )
+SchemaFor403ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor403(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor403ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_403 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor403,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor403ResponseBodyApplicationJson),
+    },
 )
 SchemaFor404ResponseBodyApplicationJson = ResponseError
 
@@ -125,77 +146,119 @@ _response_for_404 = api_client.OpenApiResponse(
             schema=SchemaFor404ResponseBodyApplicationJson),
     },
 )
+SchemaFor405ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor405(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor405ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_405 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor405,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor405ResponseBodyApplicationJson),
+    },
 )
+SchemaFor406ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor406(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor406ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_406 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor406,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor406ResponseBodyApplicationJson),
+    },
 )
+SchemaFor408ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor408(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor408ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_408 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor408,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor408ResponseBodyApplicationJson),
+    },
 )
+SchemaFor429ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor429(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor429ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_429 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor429,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor429ResponseBodyApplicationJson),
+    },
 )
+SchemaFor500ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor500(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor500ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_500 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor500,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor500ResponseBodyApplicationJson),
+    },
 )
+SchemaFor503ResponseBodyApplicationJson = ResponseError
 
 
 @dataclass
 class ApiResponseFor503(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: schemas.Unset = schemas.unset
+    body: typing.Union[
+        SchemaFor503ResponseBodyApplicationJson,
+    ]
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_503 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor503,
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaFor503ResponseBodyApplicationJson),
+    },
 )
 _all_accept_content_types = (
     'application/json',

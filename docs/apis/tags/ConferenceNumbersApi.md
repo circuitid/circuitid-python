@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **find_conference_numbers**
 <a id="find_conference_numbers"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type find_conference_numbers()
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} find_conference_numbers()
 
 Find multiple objects
 
@@ -21,6 +21,7 @@ Search and retrieve multiple objects simultaneously.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import conference_numbers_api
+from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -45,13 +46,19 @@ with circuitid_python.ApiClient(configuration) as api_client:
 
     # example passing only optional values
     query_params = {
-        '$search': None,
-        '$limit': None,
-        '$skip': None,
-        '$sort': None,
-        '$select': None,
-        '$or': None,
-        '$and': None,
+        '$search': "$search_example",
+        '$limit': 1,
+        '$skip': 1,
+        '$sort': dict(),
+        '$select': [
+        "$select_example"
+    ],
+        '$or': [
+        dict()
+    ],
+        '$and': [
+        dict()
+    ],
     }
     try:
         # Find multiple objects
@@ -91,49 +98,78 @@ $and | ModelAndSchema | | optional
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+str,  | str,  |  | 
 
 # LimitSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
+decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
 
 # SkipSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
+decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
 
 # SortSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 # SelectSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | str,  | str,  |  | 
 
 # ModelOrSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[items](#items) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 # ModelAndSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[items](#items) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Return Types, Responses
 
@@ -141,15 +177,15 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#find_conference_numbers.ApiResponseFor200) | A JSON object containing the requested data
-400 | [ApiResponseFor400](#find_conference_numbers.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#find_conference_numbers.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#find_conference_numbers.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#find_conference_numbers.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#find_conference_numbers.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#find_conference_numbers.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#find_conference_numbers.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#find_conference_numbers.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#find_conference_numbers.ApiResponseFor503) | 
+400 | [ApiResponseFor400](#find_conference_numbers.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#find_conference_numbers.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#find_conference_numbers.ApiResponseFor403) | Forbidden
+405 | [ApiResponseFor405](#find_conference_numbers.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#find_conference_numbers.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#find_conference_numbers.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#find_conference_numbers.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#find_conference_numbers.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#find_conference_numbers.ApiResponseFor503) | Unavailable
 
 #### find_conference_numbers.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -163,70 +199,145 @@ headers | Unset | headers were not defined |
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**total** | decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
+**[data](#data)** | list, tuple,  | tuple,  |  | 
+**limit** | decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
+**skip** | decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# data
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
 #### find_conference_numbers.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_conference_numbers.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 

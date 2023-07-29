@@ -26,6 +26,9 @@ Add a new object to the system.
 import circuitid_python
 from circuitid_python.api.tags import contacts_api
 from circuitid_python.models.contacts import Contacts
+from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -49,7 +52,18 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = contacts_api.ContactsApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Contacts(None)
+    body = Contacts(
+        email="email_example",
+        first="first_example",
+        last="last_example",
+        mobile_phone="mobile_phone_example",
+        business_phone="business_phone_example",
+        fax_phone="fax_phone_example",
+        extension=1,
+        job_title="job_title_example",
+        department="department_example",
+        avatar="avatar_example",
+    )
     try:
         # Create a new object
         api_response = api_instance.create_contact(
@@ -84,15 +98,15 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#create_contact.ApiResponseFor200) | A JSON object containing the new object created
-400 | [ApiResponseFor400](#create_contact.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#create_contact.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#create_contact.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#create_contact.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#create_contact.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#create_contact.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#create_contact.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#create_contact.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#create_contact.ApiResponseFor503) | 
+400 | [ApiResponseFor400](#create_contact.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#create_contact.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#create_contact.ApiResponseFor403) | Forbidden
+405 | [ApiResponseFor405](#create_contact.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#create_contact.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#create_contact.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#create_contact.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#create_contact.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#create_contact.ApiResponseFor503) | Unavailable
 
 #### create_contact.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -108,68 +122,130 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
+
 #### create_contact.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### create_contact.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 
@@ -179,7 +255,7 @@ headers | Unset | headers were not defined |
 
 # **find_contacts**
 <a id="find_contacts"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type find_contacts()
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} find_contacts()
 
 Find multiple objects
 
@@ -191,6 +267,8 @@ Search and retrieve multiple objects simultaneously.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import contacts_api
+from circuitid_python.models.contacts import Contacts
+from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -215,13 +293,19 @@ with circuitid_python.ApiClient(configuration) as api_client:
 
     # example passing only optional values
     query_params = {
-        '$search': None,
-        '$limit': None,
-        '$skip': None,
-        '$sort': None,
-        '$select': None,
-        '$or': None,
-        '$and': None,
+        '$search': "$search_example",
+        '$limit': 1,
+        '$skip': 1,
+        '$sort': dict(),
+        '$select': [
+        "$select_example"
+    ],
+        '$or': [
+        dict()
+    ],
+        '$and': [
+        dict()
+    ],
     }
     try:
         # Find multiple objects
@@ -261,49 +345,78 @@ $and | ModelAndSchema | | optional
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+str,  | str,  |  | 
 
 # LimitSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
+decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
 
 # SkipSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
+decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
 
 # SortSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 # SelectSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | str,  | str,  |  | 
 
 # ModelOrSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[items](#items) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 # ModelAndSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[items](#items) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Return Types, Responses
 
@@ -311,15 +424,15 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#find_contacts.ApiResponseFor200) | A JSON object containing the requested data
-400 | [ApiResponseFor400](#find_contacts.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#find_contacts.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#find_contacts.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#find_contacts.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#find_contacts.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#find_contacts.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#find_contacts.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#find_contacts.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#find_contacts.ApiResponseFor503) | 
+400 | [ApiResponseFor400](#find_contacts.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#find_contacts.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#find_contacts.ApiResponseFor403) | Forbidden
+405 | [ApiResponseFor405](#find_contacts.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#find_contacts.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#find_contacts.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#find_contacts.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#find_contacts.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#find_contacts.ApiResponseFor503) | Unavailable
 
 #### find_contacts.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -333,79 +446,145 @@ headers | Unset | headers were not defined |
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**total** | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
-**data** | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
-**limit** | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
-**skip** | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | value must be a 32 bit integer
+**total** | decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
+**[data](#data)** | list, tuple,  | tuple,  |  | 
+**limit** | decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
+**skip** | decimal.Decimal, int,  | decimal.Decimal,  |  | value must be a 32 bit integer
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# data
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
 
 #### find_contacts.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### find_contacts.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 
@@ -427,7 +606,10 @@ Get an object from the REST API Endpoint by its unique id.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import contacts_api
+from circuitid_python.models.contacts import Contacts
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -452,7 +634,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     path_params = {
-        'id': None,
+        'id': "id_example",
     }
     try:
         # Get object by id
@@ -485,7 +667,7 @@ id | IdSchema | |
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -493,16 +675,16 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#get_contact.ApiResponseFor200) | A JSON object containing the requested data.
-400 | [ApiResponseFor400](#get_contact.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#get_contact.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#get_contact.ApiResponseFor403) | 
+400 | [ApiResponseFor400](#get_contact.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#get_contact.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#get_contact.ApiResponseFor403) | Forbidden
 404 | [ApiResponseFor404](#get_contact.ApiResponseFor404) | Not Found
-405 | [ApiResponseFor405](#get_contact.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#get_contact.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#get_contact.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#get_contact.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#get_contact.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#get_contact.ApiResponseFor503) | 
+405 | [ApiResponseFor405](#get_contact.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#get_contact.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#get_contact.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#get_contact.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#get_contact.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#get_contact.ApiResponseFor503) | Unavailable
 
 #### get_contact.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -518,26 +700,52 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
+
 #### get_contact.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor404
 Name | Type | Description  | Notes
@@ -556,43 +764,79 @@ Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### get_contact.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 
@@ -615,6 +859,9 @@ Make updates to specific fields within the record without replacing the entire d
 import circuitid_python
 from circuitid_python.api.tags import contacts_api
 from circuitid_python.models.contacts import Contacts
+from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -639,9 +886,20 @@ with circuitid_python.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     path_params = {
-        'id': None,
+        'id': "id_example",
     }
-    body = Contacts(None)
+    body = Contacts(
+        email="email_example",
+        first="first_example",
+        last="last_example",
+        mobile_phone="mobile_phone_example",
+        business_phone="business_phone_example",
+        fax_phone="fax_phone_example",
+        extension=1,
+        job_title="job_title_example",
+        department="department_example",
+        avatar="avatar_example",
+    )
     try:
         # Patch object's data
         api_response = api_instance.patch_contact(
@@ -684,7 +942,7 @@ id | IdSchema | |
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -692,15 +950,15 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#patch_contact.ApiResponseFor200) | A JSON object containing the modified data.
-400 | [ApiResponseFor400](#patch_contact.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#patch_contact.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#patch_contact.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#patch_contact.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#patch_contact.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#patch_contact.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#patch_contact.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#patch_contact.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#patch_contact.ApiResponseFor503) | 
+400 | [ApiResponseFor400](#patch_contact.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#patch_contact.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#patch_contact.ApiResponseFor403) | Forbidden
+405 | [ApiResponseFor405](#patch_contact.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#patch_contact.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#patch_contact.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#patch_contact.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#patch_contact.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#patch_contact.ApiResponseFor503) | Unavailable
 
 #### patch_contact.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -716,68 +974,130 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
+
 #### patch_contact.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### patch_contact.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 
@@ -799,6 +1119,10 @@ Delete an object by id, removing it from the service.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import contacts_api
+from circuitid_python.models.contacts import Contacts
+from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -823,7 +1147,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     path_params = {
-        'id': None,
+        'id': "id_example",
     }
     try:
         # Delete object by id
@@ -856,7 +1180,7 @@ id | IdSchema | |
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -864,15 +1188,15 @@ Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#remove_contact.ApiResponseFor200) | A JSON object containing the deleted data.
-400 | [ApiResponseFor400](#remove_contact.ApiResponseFor400) | 
-401 | [ApiResponseFor401](#remove_contact.ApiResponseFor401) | 
-403 | [ApiResponseFor403](#remove_contact.ApiResponseFor403) | 
-405 | [ApiResponseFor405](#remove_contact.ApiResponseFor405) | 
-406 | [ApiResponseFor406](#remove_contact.ApiResponseFor406) | 
-408 | [ApiResponseFor408](#remove_contact.ApiResponseFor408) | 
-429 | [ApiResponseFor429](#remove_contact.ApiResponseFor429) | 
-500 | [ApiResponseFor500](#remove_contact.ApiResponseFor500) | 
-503 | [ApiResponseFor503](#remove_contact.ApiResponseFor503) | 
+400 | [ApiResponseFor400](#remove_contact.ApiResponseFor400) | Bad Request
+401 | [ApiResponseFor401](#remove_contact.ApiResponseFor401) | Not Authenticated
+403 | [ApiResponseFor403](#remove_contact.ApiResponseFor403) | Forbidden
+405 | [ApiResponseFor405](#remove_contact.ApiResponseFor405) | Method Not Allowed
+406 | [ApiResponseFor406](#remove_contact.ApiResponseFor406) | Not Acceptable
+408 | [ApiResponseFor408](#remove_contact.ApiResponseFor408) | Timeout
+429 | [ApiResponseFor429](#remove_contact.ApiResponseFor429) | Too Many Requests
+500 | [ApiResponseFor500](#remove_contact.ApiResponseFor500) | General Error
+503 | [ApiResponseFor503](#remove_contact.ApiResponseFor503) | Unavailable
 
 #### remove_contact.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -888,68 +1212,130 @@ Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
+
 #### remove_contact.ApiResponseFor400
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor400ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor401ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor403
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor403ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor405
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor405ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor405ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor406
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor406ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor406ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor408
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor408ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor408ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor429
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor429ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor429ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor500
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor500ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor500ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 #### remove_contact.ApiResponseFor503
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor503ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor503ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**ResponseError**](../../models/ResponseError.md) |  | 
+
 
 ### Authorization
 
