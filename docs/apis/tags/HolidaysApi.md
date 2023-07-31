@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_holiday**
 <a id="create_holiday"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_holiday(holidays)
+> bool, date, datetime, dict, float, int, list, str, none_type create_holiday(holidays_create_or_patch)
 
 Create a new object
 
@@ -27,8 +27,10 @@ import circuitid_python
 from circuitid_python.api.tags import holidays_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.holidays import Holidays
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
+from circuitid_python.models.holidays_create_or_patch import HolidaysCreateOrPatch
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = holidays_api.HolidaysApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Holidays(
+    body = HolidaysCreateOrPatch(
         name="name_example",
         object="object_example",
         object_ref="object_ref_example",
@@ -92,7 +94,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Holidays**](../../models/Holidays.md) |  | 
+[**HolidaysCreateOrPatch**](../../models/HolidaysCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -130,6 +132,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Holidays]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -272,6 +275,9 @@ import circuitid_python
 from circuitid_python.api.tags import holidays_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.holidays import Holidays
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -470,7 +476,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Holidays**]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Holidays]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_holidays.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -611,6 +633,7 @@ import circuitid_python
 from circuitid_python.api.tags import holidays_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.holidays import Holidays
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -708,6 +731,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Holidays]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -849,7 +873,7 @@ Type | Description  | Notes
 
 # **patch_holiday**
 <a id="patch_holiday"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_holiday(idholidays)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_holiday(idholidays_create_or_patch)
 
 Patch object's data
 
@@ -863,8 +887,10 @@ import circuitid_python
 from circuitid_python.api.tags import holidays_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.holidays import Holidays
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
+from circuitid_python.models.holidays_create_or_patch import HolidaysCreateOrPatch
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -891,7 +917,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Holidays(
+    body = HolidaysCreateOrPatch(
         name="name_example",
         object="object_example",
         object_ref="object_ref_example",
@@ -933,7 +959,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Holidays**](../../models/Holidays.md) |  | 
+[**HolidaysCreateOrPatch**](../../models/HolidaysCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -985,6 +1011,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Holidays]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1127,6 +1154,7 @@ import circuitid_python
 from circuitid_python.api.tags import holidays_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.holidays import Holidays
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1223,6 +1251,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Holidays]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) | [**Holidays**]({{complexTypePrefix}}Holidays.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

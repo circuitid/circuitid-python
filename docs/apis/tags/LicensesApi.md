@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_license**
 <a id="create_license"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_license(licenses)
+> bool, date, datetime, dict, float, int, list, str, none_type create_license(licenses_create_or_patch)
 
 Create a new object
 
@@ -26,7 +26,9 @@ Add a new object to the system.
 import circuitid_python
 from circuitid_python.api.tags import licenses_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.licenses_create_or_patch import LicensesCreateOrPatch
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = licenses_api.LicensesApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Licenses(
+    body = LicensesCreateOrPatch(
         order="order_example",
         object="object_example",
         ref="ref_example",
@@ -83,7 +85,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Licenses**](../../models/Licenses.md) |  | 
+[**LicensesCreateOrPatch**](../../models/LicensesCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -121,6 +123,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Licenses]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -262,6 +265,9 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import licenses_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -461,7 +467,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Licenses**]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Licenses]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_licenses.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -601,6 +623,7 @@ Get an object from the REST API Endpoint by its unique id.
 import circuitid_python
 from circuitid_python.api.tags import licenses_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
@@ -699,6 +722,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Licenses]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -840,7 +864,7 @@ Type | Description  | Notes
 
 # **patch_license**
 <a id="patch_license"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_license(idlicenses)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_license(idlicenses_create_or_patch)
 
 Patch object's data
 
@@ -853,7 +877,9 @@ Make updates to specific fields within the record without replacing the entire d
 import circuitid_python
 from circuitid_python.api.tags import licenses_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.licenses_create_or_patch import LicensesCreateOrPatch
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
@@ -882,7 +908,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Licenses(
+    body = LicensesCreateOrPatch(
         order="order_example",
         object="object_example",
         ref="ref_example",
@@ -915,7 +941,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Licenses**](../../models/Licenses.md) |  | 
+[**LicensesCreateOrPatch**](../../models/LicensesCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -967,6 +993,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Licenses]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1108,6 +1135,7 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import licenses_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
@@ -1205,6 +1233,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Licenses]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) | [**Licenses**]({{complexTypePrefix}}Licenses.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

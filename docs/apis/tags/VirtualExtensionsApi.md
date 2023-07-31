@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_virtual_extension**
 <a id="create_virtual_extension"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_virtual_extension(virtualextensions)
+> bool, date, datetime, dict, float, int, list, str, none_type create_virtual_extension(virtualextensions_create_or_patch)
 
 Create a new object
 
@@ -25,8 +25,10 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import virtual_extensions_api
+from circuitid_python.models.virtualextensions_create_or_patch import VirtualextensionsCreateOrPatch
 from circuitid_python.models.virtualextensions import Virtualextensions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = virtual_extensions_api.VirtualExtensionsApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Virtualextensions(
+    body = VirtualextensionsCreateOrPatch(
         name="name_example",
         extension=1,
         phoneinboundrule="phoneinboundrule_example",
@@ -82,7 +84,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Virtualextensions**](../../models/Virtualextensions.md) |  | 
+[**VirtualextensionsCreateOrPatch**](../../models/VirtualextensionsCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -120,6 +122,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Virtualextensions]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -262,6 +265,9 @@ import circuitid_python
 from circuitid_python.api.tags import virtual_extensions_api
 from circuitid_python.models.virtualextensions import Virtualextensions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -460,7 +466,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Virtualextensions]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_virtual_extensions.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -601,6 +623,7 @@ import circuitid_python
 from circuitid_python.api.tags import virtual_extensions_api
 from circuitid_python.models.virtualextensions import Virtualextensions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -698,6 +721,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Virtualextensions]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -839,7 +863,7 @@ Type | Description  | Notes
 
 # **patch_virtual_extension**
 <a id="patch_virtual_extension"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_virtual_extension(idvirtualextensions)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_virtual_extension(idvirtualextensions_create_or_patch)
 
 Patch object's data
 
@@ -851,8 +875,10 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import virtual_extensions_api
+from circuitid_python.models.virtualextensions_create_or_patch import VirtualextensionsCreateOrPatch
 from circuitid_python.models.virtualextensions import Virtualextensions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -881,7 +907,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Virtualextensions(
+    body = VirtualextensionsCreateOrPatch(
         name="name_example",
         extension=1,
         phoneinboundrule="phoneinboundrule_example",
@@ -913,7 +939,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Virtualextensions**](../../models/Virtualextensions.md) |  | 
+[**VirtualextensionsCreateOrPatch**](../../models/VirtualextensionsCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -965,6 +991,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Virtualextensions]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1107,6 +1134,7 @@ import circuitid_python
 from circuitid_python.api.tags import virtual_extensions_api
 from circuitid_python.models.virtualextensions import Virtualextensions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1203,6 +1231,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Virtualextensions]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) | [**Virtualextensions**]({{complexTypePrefix}}Virtualextensions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

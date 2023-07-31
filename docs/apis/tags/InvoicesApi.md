@@ -23,6 +23,9 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import invoices_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.invoices import Invoices
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -222,7 +225,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Invoices**]({{complexTypePrefix}}Invoices.md) | [**Invoices**]({{complexTypePrefix}}Invoices.md) | [**Invoices**]({{complexTypePrefix}}Invoices.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Invoices]({{complexTypePrefix}}Invoices.md) | [**Invoices**]({{complexTypePrefix}}Invoices.md) | [**Invoices**]({{complexTypePrefix}}Invoices.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_invoices.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -362,6 +381,7 @@ Get an object from the REST API Endpoint by its unique id.
 import circuitid_python
 from circuitid_python.api.tags import invoices_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.invoices import Invoices
@@ -460,6 +480,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Invoices]({{complexTypePrefix}}Invoices.md) | [**Invoices**]({{complexTypePrefix}}Invoices.md) | [**Invoices**]({{complexTypePrefix}}Invoices.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

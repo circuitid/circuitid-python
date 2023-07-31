@@ -26,6 +26,9 @@ import frozendict  # noqa: F401
 from circuitid_python import schemas  # noqa: F401
 
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.chatrooms import Chatrooms
 
 # Query params
@@ -196,13 +199,48 @@ class SchemaFor200ResponseBodyApplicationJson(
             
                 class MetaOapg:
                     
-                    @staticmethod
-                    def items() -> typing.Type['Chatrooms']:
-                        return Chatrooms
+                    
+                    class items(
+                        schemas.ComposedSchema,
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            
+                            @classmethod
+                            @functools.lru_cache()
+                            def all_of(cls):
+                                # we need this here to make our import statements work
+                                # we must store _composed_schemas in here so the code is only run
+                                # when we invoke this method. If we kept this at the class
+                                # level we would get an error because the class level
+                                # code would be run when this module is imported, and these composed
+                                # classes don't exist yet because their module has not finished
+                                # loading
+                                return [
+                                    Chatrooms,
+                                    Id,
+                                    ResponseUsers,
+                                    ResponseDate,
+                                ]
+                    
+                    
+                        def __new__(
+                            cls,
+                            *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                            **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                        ) -> 'items':
+                            return super().__new__(
+                                cls,
+                                *_args,
+                                _configuration=_configuration,
+                                **kwargs,
+                            )
             
                 def __new__(
                     cls,
-                    _arg: typing.Union[typing.Tuple['Chatrooms'], typing.List['Chatrooms']],
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]]],
                     _configuration: typing.Optional[schemas.Configuration] = None,
                 ) -> 'data':
                     return super().__new__(
@@ -211,7 +249,7 @@ class SchemaFor200ResponseBodyApplicationJson(
                         _configuration=_configuration,
                     )
             
-                def __getitem__(self, i: int) -> 'Chatrooms':
+                def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
             __annotations__ = {
                 "total": total,

@@ -26,17 +26,19 @@ import frozendict  # noqa: F401
 from circuitid_python import schemas  # noqa: F401
 
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
+from circuitid_python.models.timeschedules_create_or_patch import TimeschedulesCreateOrPatch
 from circuitid_python.models.timeschedules import Timeschedules
 
 from . import path
 
 # body param
-SchemaForRequestBodyApplicationJson = Timeschedules
+SchemaForRequestBodyApplicationJson = TimeschedulesCreateOrPatch
 
 
-request_body_timeschedules = api_client.RequestBody(
+request_body_timeschedules_create_or_patch = api_client.RequestBody(
     content={
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
@@ -67,6 +69,7 @@ class SchemaFor200ResponseBodyApplicationJson(
             # loading
             return [
                 Timeschedules,
+                Id,
                 ResponseUsers,
                 ResponseDate,
             ]
@@ -371,7 +374,7 @@ class BaseApi(api_client.Api):
                 'The required body parameter has an invalid value of: unset. Set a valid value instead')
         _fields = None
         _body = None
-        serialized_data = request_body_timeschedules.serialize(body, content_type)
+        serialized_data = request_body_timeschedules_create_or_patch.serialize(body, content_type)
         _headers.add('Content-Type', content_type)
         if 'fields' in serialized_data:
             _fields = serialized_data['fields']

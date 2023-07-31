@@ -14,7 +14,6 @@ Key | Input Type | Accessed Type | Description | Notes
 **[services](#services)** | list, tuple,  | tuple,  |  | 
 **type** | str,  | str,  |  | must be one of ["events", ] 
 **user** | str,  | str,  | ObjectId (unique 12 bytes ID) | 
-**status** | str,  | str,  |  | must be one of ["active", "disabled", "suspended", "error", "pending", ] if omitted the server will use the default value of "pending"
 **description** | str,  | str,  |  | [optional] 
 **requireId** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 0value must be a 32 bit integer
 **isFree** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 1value must be a 32 bit integer

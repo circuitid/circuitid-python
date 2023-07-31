@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_phone_outbound_rule_action**
 <a id="create_phone_outbound_rule_action"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_phone_outbound_rule_action(phoneoutboundruleactions)
+> bool, date, datetime, dict, float, int, list, str, none_type create_phone_outbound_rule_action(phoneoutboundruleactions_create_or_patch)
 
 Create a new object
 
@@ -27,8 +27,10 @@ import circuitid_python
 from circuitid_python.api.tags import phone_outbound_rule_actions_api
 from circuitid_python.models.phoneoutboundruleactions import Phoneoutboundruleactions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
+from circuitid_python.models.phoneoutboundruleactions_create_or_patch import PhoneoutboundruleactionsCreateOrPatch
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = phone_outbound_rule_actions_api.PhoneOutboundRuleActionsApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Phoneoutboundruleactions(
+    body = PhoneoutboundruleactionsCreateOrPatch(
         name="name_example",
         group="group_example",
         phoneoutboundrule="phoneoutboundrule_example",
@@ -96,7 +98,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Phoneoutboundruleactions**](../../models/Phoneoutboundruleactions.md) |  | 
+[**PhoneoutboundruleactionsCreateOrPatch**](../../models/PhoneoutboundruleactionsCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -134,6 +136,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Phoneoutboundruleactions]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -276,6 +279,9 @@ import circuitid_python
 from circuitid_python.api.tags import phone_outbound_rule_actions_api
 from circuitid_python.models.phoneoutboundruleactions import Phoneoutboundruleactions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -474,7 +480,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Phoneoutboundruleactions]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_phone_outbound_rule_actions.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -615,6 +637,7 @@ import circuitid_python
 from circuitid_python.api.tags import phone_outbound_rule_actions_api
 from circuitid_python.models.phoneoutboundruleactions import Phoneoutboundruleactions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -712,6 +735,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Phoneoutboundruleactions]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -853,7 +877,7 @@ Type | Description  | Notes
 
 # **patch_phone_outbound_rule_action**
 <a id="patch_phone_outbound_rule_action"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_phone_outbound_rule_action(idphoneoutboundruleactions)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_phone_outbound_rule_action(idphoneoutboundruleactions_create_or_patch)
 
 Patch object's data
 
@@ -867,8 +891,10 @@ import circuitid_python
 from circuitid_python.api.tags import phone_outbound_rule_actions_api
 from circuitid_python.models.phoneoutboundruleactions import Phoneoutboundruleactions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
+from circuitid_python.models.phoneoutboundruleactions_create_or_patch import PhoneoutboundruleactionsCreateOrPatch
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -895,7 +921,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Phoneoutboundruleactions(
+    body = PhoneoutboundruleactionsCreateOrPatch(
         name="name_example",
         group="group_example",
         phoneoutboundrule="phoneoutboundrule_example",
@@ -941,7 +967,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Phoneoutboundruleactions**](../../models/Phoneoutboundruleactions.md) |  | 
+[**PhoneoutboundruleactionsCreateOrPatch**](../../models/PhoneoutboundruleactionsCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -993,6 +1019,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Phoneoutboundruleactions]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1135,6 +1162,7 @@ import circuitid_python
 from circuitid_python.api.tags import phone_outbound_rule_actions_api
 from circuitid_python.models.phoneoutboundruleactions import Phoneoutboundruleactions
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1231,6 +1259,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Phoneoutboundruleactions]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) | [**Phoneoutboundruleactions**]({{complexTypePrefix}}Phoneoutboundruleactions.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

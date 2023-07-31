@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **create_authentication**
 <a id="create_authentication"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_authentication(authentication)
+> bool, date, datetime, dict, float, int, list, str, none_type create_authentication(authentication_create_or_patch)
 
 Create a new object
 
@@ -22,9 +22,11 @@ Add a new object to the system.
 import circuitid_python
 from circuitid_python.api.tags import authentication_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.authentication import Authentication
+from circuitid_python.models.authentication_create_or_patch import AuthenticationCreateOrPatch
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -48,7 +50,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = authentication_api.AuthenticationApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Authentication(
+    body = AuthenticationCreateOrPatch(
         username="username_example",
         password="password_example",
         strategy="local",
@@ -78,7 +80,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Authentication**](../../models/Authentication.md) |  | 
+[**AuthenticationCreateOrPatch**](../../models/AuthenticationCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -116,6 +118,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Authentication]({{complexTypePrefix}}Authentication.md) | [**Authentication**]({{complexTypePrefix}}Authentication.md) | [**Authentication**]({{complexTypePrefix}}Authentication.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

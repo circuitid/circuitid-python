@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_call_queue**
 <a id="create_call_queue"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_call_queue(callqueues)
+> bool, date, datetime, dict, float, int, list, str, none_type create_call_queue(callqueues_create_or_patch)
 
 Create a new object
 
@@ -25,7 +25,9 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import call_queues_api
+from circuitid_python.models.callqueues_create_or_patch import CallqueuesCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.callqueues import Callqueues
 from circuitid_python.models.response_users import ResponseUsers
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = call_queues_api.CallQueuesApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Callqueues(
+    body = CallqueuesCreateOrPatch(
         name="name_example",
         strategy="ring-all",
         announce_position=1,
@@ -99,7 +101,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Callqueues**](../../models/Callqueues.md) |  | 
+[**CallqueuesCreateOrPatch**](../../models/CallqueuesCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -137,6 +139,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Callqueues]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -278,7 +281,10 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import call_queues_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.callqueues import Callqueues
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -477,7 +483,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Callqueues**]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Callqueues]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_call_queues.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -617,6 +639,7 @@ Get an object from the REST API Endpoint by its unique id.
 import circuitid_python
 from circuitid_python.api.tags import call_queues_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.callqueues import Callqueues
 from circuitid_python.models.response_users import ResponseUsers
@@ -715,6 +738,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Callqueues]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -856,7 +880,7 @@ Type | Description  | Notes
 
 # **patch_call_queue**
 <a id="patch_call_queue"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_call_queue(idcallqueues)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_call_queue(idcallqueues_create_or_patch)
 
 Patch object's data
 
@@ -868,7 +892,9 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import call_queues_api
+from circuitid_python.models.callqueues_create_or_patch import CallqueuesCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.callqueues import Callqueues
 from circuitid_python.models.response_users import ResponseUsers
@@ -898,7 +924,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Callqueues(
+    body = CallqueuesCreateOrPatch(
         name="name_example",
         strategy="ring-all",
         announce_position=1,
@@ -947,7 +973,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Callqueues**](../../models/Callqueues.md) |  | 
+[**CallqueuesCreateOrPatch**](../../models/CallqueuesCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -999,6 +1025,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Callqueues]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1140,6 +1167,7 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import call_queues_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.callqueues import Callqueues
 from circuitid_python.models.response_users import ResponseUsers
@@ -1237,6 +1265,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Callqueues]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) | [**Callqueues**]({{complexTypePrefix}}Callqueues.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

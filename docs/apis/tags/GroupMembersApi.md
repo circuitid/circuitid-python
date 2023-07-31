@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_group_member**
 <a id="create_group_member"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_group_member(groupmembers)
+> bool, date, datetime, dict, float, int, list, str, none_type create_group_member(groupmembers_create_or_patch)
 
 Create a new object
 
@@ -26,9 +26,11 @@ Add a new object to the system.
 import circuitid_python
 from circuitid_python.api.tags import group_members_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.groupmembers import Groupmembers
+from circuitid_python.models.groupmembers_create_or_patch import GroupmembersCreateOrPatch
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = group_members_api.GroupMembersApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Groupmembers(
+    body = GroupmembersCreateOrPatch(
         group="group_example",
         object="object_example",
         priority=1,
@@ -83,7 +85,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Groupmembers**](../../models/Groupmembers.md) |  | 
+[**GroupmembersCreateOrPatch**](../../models/GroupmembersCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -121,6 +123,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Groupmembers]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -262,6 +265,9 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import group_members_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.groupmembers import Groupmembers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -461,7 +467,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Groupmembers]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_group_members.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -601,6 +623,7 @@ Get an object from the REST API Endpoint by its unique id.
 import circuitid_python
 from circuitid_python.api.tags import group_members_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.groupmembers import Groupmembers
@@ -699,6 +722,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Groupmembers]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -840,7 +864,7 @@ Type | Description  | Notes
 
 # **patch_group_member**
 <a id="patch_group_member"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_group_member(idgroupmembers)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_group_member(idgroupmembers_create_or_patch)
 
 Patch object's data
 
@@ -853,9 +877,11 @@ Make updates to specific fields within the record without replacing the entire d
 import circuitid_python
 from circuitid_python.api.tags import group_members_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.groupmembers import Groupmembers
+from circuitid_python.models.groupmembers_create_or_patch import GroupmembersCreateOrPatch
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -882,7 +908,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Groupmembers(
+    body = GroupmembersCreateOrPatch(
         group="group_example",
         object="object_example",
         priority=1,
@@ -915,7 +941,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Groupmembers**](../../models/Groupmembers.md) |  | 
+[**GroupmembersCreateOrPatch**](../../models/GroupmembersCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -967,6 +993,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Groupmembers]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1108,6 +1135,7 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import group_members_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.groupmembers import Groupmembers
@@ -1205,6 +1233,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Groupmembers]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) | [**Groupmembers**]({{complexTypePrefix}}Groupmembers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

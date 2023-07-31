@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_user**
 <a id="create_user"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_user(users)
+> bool, date, datetime, dict, float, int, list, str, none_type create_user(users_create_or_patch)
 
 Create a new object
 
@@ -27,7 +27,9 @@ import circuitid_python
 from circuitid_python.api.tags import users_api
 from circuitid_python.models.users import Users
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.users_create_or_patch import UsersCreateOrPatch
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -52,11 +54,9 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Users(
+    body = UsersCreateOrPatch(
         email="email_example",
         password="password_example",
-        sip_password="sip_password_example",
-        turn_password="turn_password_example",
         first="first_example",
         last="last_example",
         mobile_phone="mobile_phone_example",
@@ -69,7 +69,6 @@ with circuitid_python.ApiClient(configuration) as api_client:
         avatar="avatar_example",
         language="en",
         is_primary=0,
-        status="active",
         vm_greeting_type="default",
         vm_timeout=20,
         vm_file="vm_file_example",
@@ -81,14 +80,23 @@ with circuitid_python.ApiClient(configuration) as api_client:
         admin_permission="r",
         billing_permission="r",
         phone_permission="r",
-        agile_permission="r",
-        job_server_permission="r",
-        media_server_permission="r",
-        mail_server_permission="r",
-        super_admin_permission="r",
         timezone="America/New_York",
         vm_transcription=0,
-        communication=dict(),
+        communication=dict(
+            "key": dict(
+                notifications=dict(
+                    email=True,
+                    sms=True,
+                    sound=True,
+                ),
+,
+,
+,
+,
+,
+,
+            ),
+        ),
     )
     try:
         # Create a new object
@@ -115,7 +123,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Users**](../../models/Users.md) |  | 
+[**UsersCreateOrPatch**](../../models/UsersCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -153,6 +161,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Users]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -295,6 +304,9 @@ import circuitid_python
 from circuitid_python.api.tags import users_api
 from circuitid_python.models.users import Users
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -493,7 +505,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Users**]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Users]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_users.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -634,6 +662,7 @@ import circuitid_python
 from circuitid_python.api.tags import users_api
 from circuitid_python.models.users import Users
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -731,6 +760,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Users]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -872,7 +902,7 @@ Type | Description  | Notes
 
 # **patch_user**
 <a id="patch_user"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_user(idusers)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_user(idusers_create_or_patch)
 
 Patch object's data
 
@@ -886,7 +916,9 @@ import circuitid_python
 from circuitid_python.api.tags import users_api
 from circuitid_python.models.users import Users
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.users_create_or_patch import UsersCreateOrPatch
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -914,11 +946,9 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Users(
+    body = UsersCreateOrPatch(
         email="email_example",
         password="password_example",
-        sip_password="sip_password_example",
-        turn_password="turn_password_example",
         first="first_example",
         last="last_example",
         mobile_phone="mobile_phone_example",
@@ -931,7 +961,6 @@ with circuitid_python.ApiClient(configuration) as api_client:
         avatar="avatar_example",
         language="en",
         is_primary=0,
-        status="active",
         vm_greeting_type="default",
         vm_timeout=20,
         vm_file="vm_file_example",
@@ -943,14 +972,23 @@ with circuitid_python.ApiClient(configuration) as api_client:
         admin_permission="r",
         billing_permission="r",
         phone_permission="r",
-        agile_permission="r",
-        job_server_permission="r",
-        media_server_permission="r",
-        mail_server_permission="r",
-        super_admin_permission="r",
         timezone="America/New_York",
         vm_transcription=0,
-        communication=dict(),
+        communication=dict(
+            "key": dict(
+                notifications=dict(
+                    email=True,
+                    sms=True,
+                    sound=True,
+                ),
+,
+,
+,
+,
+,
+,
+            ),
+        ),
     )
     try:
         # Patch object's data
@@ -979,7 +1017,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Users**](../../models/Users.md) |  | 
+[**UsersCreateOrPatch**](../../models/UsersCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -1031,6 +1069,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Users]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1173,6 +1212,7 @@ import circuitid_python
 from circuitid_python.api.tags import users_api
 from circuitid_python.models.users import Users
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1269,6 +1309,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Users]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) | [**Users**]({{complexTypePrefix}}Users.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

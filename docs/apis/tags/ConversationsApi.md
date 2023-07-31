@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_conversation**
 <a id="create_conversation"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_conversation(conversations)
+> bool, date, datetime, dict, float, int, list, str, none_type create_conversation(conversations_create_or_patch)
 
 Create a new object
 
@@ -25,7 +25,9 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import conversations_api
+from circuitid_python.models.conversations_create_or_patch import ConversationsCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.conversations import Conversations
@@ -52,14 +54,8 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = conversations_api.ConversationsApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Conversations(
-        contacts=[
-            None
-        ],
+    body = ConversationsCreateOrPatch(
         number="number_example",
-        channel="email",
-        ref="contacts",
-        object="object_example",
         status="open",
     )
     try:
@@ -87,7 +83,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Conversations**](../../models/Conversations.md) |  | 
+[**ConversationsCreateOrPatch**](../../models/ConversationsCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -125,6 +121,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversations]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -266,6 +263,9 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import conversations_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.conversations import Conversations
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -465,7 +465,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Conversations**]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Conversations]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_conversations.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -605,6 +621,7 @@ Get an object from the REST API Endpoint by its unique id.
 import circuitid_python
 from circuitid_python.api.tags import conversations_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.conversations import Conversations
@@ -703,6 +720,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversations]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -844,7 +862,7 @@ Type | Description  | Notes
 
 # **patch_conversation**
 <a id="patch_conversation"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_conversation(idconversations)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_conversation(idconversations_create_or_patch)
 
 Patch object's data
 
@@ -856,7 +874,9 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import conversations_api
+from circuitid_python.models.conversations_create_or_patch import ConversationsCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.conversations import Conversations
@@ -886,14 +906,8 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Conversations(
-        contacts=[
-            None
-        ],
+    body = ConversationsCreateOrPatch(
         number="number_example",
-        channel="email",
-        ref="contacts",
-        object="object_example",
         status="open",
     )
     try:
@@ -923,7 +937,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Conversations**](../../models/Conversations.md) |  | 
+[**ConversationsCreateOrPatch**](../../models/ConversationsCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -975,6 +989,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversations]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1116,6 +1131,7 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import conversations_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.conversations import Conversations
@@ -1213,6 +1229,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversations]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) | [**Conversations**]({{complexTypePrefix}}Conversations.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

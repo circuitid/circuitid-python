@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **createdirectory**
 <a id="createdirectory"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type createdirectory(directories)
+> bool, date, datetime, dict, float, int, list, str, none_type createdirectory(directories_create_or_patch)
 
 Create a new object
 
@@ -25,8 +25,10 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import directories_api
+from circuitid_python.models.directories_create_or_patch import DirectoriesCreateOrPatch
 from circuitid_python.models.directories import Directories
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = directories_api.DirectoriesApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Directories(
+    body = DirectoriesCreateOrPatch(
         name="name_example",
         type="customers",
         groups=[
@@ -85,7 +87,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Directories**](../../models/Directories.md) |  | 
+[**DirectoriesCreateOrPatch**](../../models/DirectoriesCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -123,6 +125,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Directories]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -265,6 +268,9 @@ import circuitid_python
 from circuitid_python.api.tags import directories_api
 from circuitid_python.models.directories import Directories
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -463,7 +469,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Directories**]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Directories]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_directories.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -604,6 +626,7 @@ import circuitid_python
 from circuitid_python.api.tags import directories_api
 from circuitid_python.models.directories import Directories
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -701,6 +724,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Directories]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -842,7 +866,7 @@ Type | Description  | Notes
 
 # **patchdirectory**
 <a id="patchdirectory"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patchdirectory(iddirectories)
+> bool, date, datetime, dict, float, int, list, str, none_type patchdirectory(iddirectories_create_or_patch)
 
 Patch object's data
 
@@ -854,8 +878,10 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import directories_api
+from circuitid_python.models.directories_create_or_patch import DirectoriesCreateOrPatch
 from circuitid_python.models.directories import Directories
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -884,7 +910,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Directories(
+    body = DirectoriesCreateOrPatch(
         name="name_example",
         type="customers",
         groups=[
@@ -919,7 +945,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Directories**](../../models/Directories.md) |  | 
+[**DirectoriesCreateOrPatch**](../../models/DirectoriesCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -971,6 +997,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Directories]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1113,6 +1140,7 @@ import circuitid_python
 from circuitid_python.api.tags import directories_api
 from circuitid_python.models.directories import Directories
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1209,6 +1237,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Directories]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) | [**Directories**]({{complexTypePrefix}}Directories.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

@@ -10,23 +10,17 @@ Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
 **defaultBillMethod** | str,  | str,  |  | must be one of ["credit", "paymentmethod", ] if omitted the server will use the default value of "credit"
 **name** | str,  | str,  |  | 
-**status** | str,  | str,  |  | [optional] must be one of ["active", "suspended", "terminated", "fraud", ] if omitted the server will use the default value of "active"
 **websiteUrl** | str,  | str,  |  | [optional] 
 **logo** | str,  | str,  |  | [optional] 
 **credit** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] if omitted the server will use the default value of 0value must be a 32 bit integer
 **adminUserId** | str,  | str,  | ObjectId (unique 12 bytes ID) | [optional] 
 **billingUserId** | str,  | str,  | ObjectId (unique 12 bytes ID) | [optional] 
 **callRecordingUserId** | str,  | str,  | ObjectId (unique 12 bytes ID) | [optional] 
-**callForwardingCallLimit** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] if omitted the server will use the default value of 10value must be a 32 bit integer
 **supportUserId** | str,  | str,  | ObjectId (unique 12 bytes ID) | [optional] 
 **automaticRefillAmount** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] if omitted the server will use the default value of 0value must be a 32 bit integer
 **lowBalanceAlertAmount** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] if omitted the server will use the default value of 0value must be a 32 bit integer
-**lowBalanceAlertAt** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
-**lowBalanceAlertCount** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] if omitted the server will use the default value of 0value must be a 32 bit integer
-**lastAutomaticRefillInvoice** | str,  | str,  | ObjectId (unique 12 bytes ID) | [optional] 
 **internationalCalling** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 0value must be a 32 bit integer
 **createdByIP** | str,  | str,  |  | [optional] 
-**callDebug** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 0value must be a 32 bit integer
 **mediaBypass** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 0value must be a 32 bit integer
 **accountLock** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 1value must be a 32 bit integer
 **callRecording** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 0value must be a 32 bit integer

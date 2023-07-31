@@ -25,6 +25,9 @@ import circuitid_python
 from circuitid_python.api.tags import numbers_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.numbers import Numbers
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -223,7 +226,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Numbers**]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Numbers]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_numbers.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -364,6 +383,7 @@ import circuitid_python
 from circuitid_python.api.tags import numbers_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.numbers import Numbers
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -461,6 +481,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Numbers]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -602,7 +623,7 @@ Type | Description  | Notes
 
 # **patch_number**
 <a id="patch_number"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_number(idnumbers)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_number(idnumbers_create_or_patch)
 
 Patch object's data
 
@@ -614,8 +635,10 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import numbers_api
+from circuitid_python.models.numbers_create_or_patch import NumbersCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.numbers import Numbers
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -644,43 +667,13 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Numbers(
-        in_use=1,
-        name="name_example",
-        country_code="country_code_example",
-        amount=1,
-        per_minute_rate=1,
-        provider="provider_example",
-        original_provider="original_provider_example",
-        provider_order_id="provider_order_id_example",
-        fax=0,
-        voice=0,
-        status=1,
-        sms=0,
-        mms=0,
-        change_region_order_id="change_region_order_id_example",
-        change_region_order_date="1970-01-01T00:00:00.00Z",
+    body = NumbersCreateOrPatch(
         directory_listing="directory_listing_example",
-        directory_listing_order_id="directory_listing_order_id_example",
-        directory_listing_order_date="1970-01-01T00:00:00.00Z",
         caller_name="caller_name_example",
-        caller_name_order_id="caller_name_order_id_example",
-        caller_name_order_date="1970-01-01T00:00:00.00Z",
         e911="e911_example",
-        e911_order_id="e911_order_id_example",
-        e911_order_date="1970-01-01T00:00:00.00Z",
         message_campaign="message_campaign_example",
-        message_class="P2P",
-        message_type="SMS",
-        message_campaign_order_id="message_campaign_order_id_example",
-        message_campaign_order_date="1970-01-01T00:00:00.00Z",
-        e911_supported=0,
-        caller_name_supported=0,
-        directory_listing_supported=0,
-        messaging_supported=0,
         destination_type="park",
         destination="destination_example",
-        ref="ref_example",
         call_forwarding_destination="call_forwarding_destination_example",
     )
     try:
@@ -710,7 +703,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Numbers**](../../models/Numbers.md) |  | 
+[**NumbersCreateOrPatch**](../../models/NumbersCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -762,6 +755,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Numbers]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) | [**Numbers**]({{complexTypePrefix}}Numbers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

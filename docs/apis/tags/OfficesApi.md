@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_office**
 <a id="create_office"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_office(offices)
+> bool, date, datetime, dict, float, int, list, str, none_type create_office(offices_create_or_patch)
 
 Create a new object
 
@@ -25,7 +25,9 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import offices_api
+from circuitid_python.models.offices_create_or_patch import OfficesCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.offices import Offices
@@ -52,19 +54,15 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = offices_api.OfficesApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Offices(
+    body = OfficesCreateOrPatch(
         name="name_example",
         street_number="street_number_example",
         street_name="street_name_example",
         pre_direction="pre_direction_example",
         street_suffix="street_suffix_example",
-        city="city_example",
-        state="state_example",
-        zip="zip_example",
         zip_code="zip_code_example",
         address2="address2_example",
         country="country_example",
-        providers=dict(),
         region="region_example",
     )
     try:
@@ -92,7 +90,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Offices**](../../models/Offices.md) |  | 
+[**OfficesCreateOrPatch**](../../models/OfficesCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -130,6 +128,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Offices]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -271,6 +270,9 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import offices_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.offices import Offices
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
@@ -470,7 +472,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Offices**]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Offices]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_offices.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -610,6 +628,7 @@ Get an object from the REST API Endpoint by its unique id.
 import circuitid_python
 from circuitid_python.api.tags import offices_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.offices import Offices
@@ -708,6 +727,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Offices]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -849,7 +869,7 @@ Type | Description  | Notes
 
 # **patch_office**
 <a id="patch_office"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_office(idoffices)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_office(idoffices_create_or_patch)
 
 Patch object's data
 
@@ -861,7 +881,9 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import offices_api
+from circuitid_python.models.offices_create_or_patch import OfficesCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.offices import Offices
@@ -891,19 +913,15 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Offices(
+    body = OfficesCreateOrPatch(
         name="name_example",
         street_number="street_number_example",
         street_name="street_name_example",
         pre_direction="pre_direction_example",
         street_suffix="street_suffix_example",
-        city="city_example",
-        state="state_example",
-        zip="zip_example",
         zip_code="zip_code_example",
         address2="address2_example",
         country="country_example",
-        providers=dict(),
         region="region_example",
     )
     try:
@@ -933,7 +951,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Offices**](../../models/Offices.md) |  | 
+[**OfficesCreateOrPatch**](../../models/OfficesCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -985,6 +1003,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Offices]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1126,6 +1145,7 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import offices_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.offices import Offices
@@ -1223,6 +1243,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Offices]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) | [**Offices**]({{complexTypePrefix}}Offices.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

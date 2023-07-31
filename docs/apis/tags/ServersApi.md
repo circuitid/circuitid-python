@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_server**
 <a id="create_server"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_server(servers)
+> bool, date, datetime, dict, float, int, list, str, none_type create_server(servers_create_or_patch)
 
 Create a new object
 
@@ -26,7 +26,9 @@ Add a new object to the system.
 import circuitid_python
 from circuitid_python.api.tags import servers_api
 from circuitid_python.models.servers import Servers
+from circuitid_python.models.servers_create_or_patch import ServersCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -52,16 +54,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = servers_api.ServersApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Servers(
+    body = ServersCreateOrPatch(
         name="name_example",
         host="host_example",
         port=5060,
         caller_id="caller_id_example",
         type="sip",
-        domestic_outbound_call_limit=10,
-        domestic_inbound_call_limit=10,
-        international_outbound_call_limit=10,
-        toll_free_channel_limit=10,
         inbound_sip_trunking_order="inbound_sip_trunking_order_example",
         outbound_sip_trunking_order="outbound_sip_trunking_order_example",
         no_instant_ring_back=1,
@@ -93,7 +91,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Servers**](../../models/Servers.md) |  | 
+[**ServersCreateOrPatch**](../../models/ServersCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -131,6 +129,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Servers]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -273,6 +272,9 @@ import circuitid_python
 from circuitid_python.api.tags import servers_api
 from circuitid_python.models.servers import Servers
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -471,7 +473,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Servers**]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Servers]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_servers.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -612,6 +630,7 @@ import circuitid_python
 from circuitid_python.api.tags import servers_api
 from circuitid_python.models.servers import Servers
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -709,6 +728,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Servers]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -850,7 +870,7 @@ Type | Description  | Notes
 
 # **patch_server**
 <a id="patch_server"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_server(idservers)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_server(idservers_create_or_patch)
 
 Patch object's data
 
@@ -863,7 +883,9 @@ Make updates to specific fields within the record without replacing the entire d
 import circuitid_python
 from circuitid_python.api.tags import servers_api
 from circuitid_python.models.servers import Servers
+from circuitid_python.models.servers_create_or_patch import ServersCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -892,16 +914,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Servers(
+    body = ServersCreateOrPatch(
         name="name_example",
         host="host_example",
         port=5060,
         caller_id="caller_id_example",
         type="sip",
-        domestic_outbound_call_limit=10,
-        domestic_inbound_call_limit=10,
-        international_outbound_call_limit=10,
-        toll_free_channel_limit=10,
         inbound_sip_trunking_order="inbound_sip_trunking_order_example",
         outbound_sip_trunking_order="outbound_sip_trunking_order_example",
         no_instant_ring_back=1,
@@ -935,7 +953,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Servers**](../../models/Servers.md) |  | 
+[**ServersCreateOrPatch**](../../models/ServersCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -987,6 +1005,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Servers]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1129,6 +1148,7 @@ import circuitid_python
 from circuitid_python.api.tags import servers_api
 from circuitid_python.models.servers import Servers
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1225,6 +1245,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Servers]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) | [**Servers**]({{complexTypePrefix}}Servers.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

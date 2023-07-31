@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 # **create_fax**
 <a id="create_fax"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_fax(faxes)
+> bool, date, datetime, dict, float, int, list, str, none_type create_fax(faxes_create_or_patch)
 
 Create a new object
 
@@ -24,7 +24,9 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import faxes_api
+from circuitid_python.models.faxes_create_or_patch import FaxesCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.faxes import Faxes
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
@@ -51,24 +53,15 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = faxes_api.FaxesApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Faxes(
-        caller_id_number="caller_id_number_example",
-        caller_destination="caller_destination_example",
-        pages=0,
-        status_code=1,
-        transfered_pages=0,
-        status="processing",
-        error="error_example",
-        type="send",
-        order="order_example",
-        file="file_example",
-        contact="contact_example",
+    body = FaxesCreateOrPatch(
+        attachments=[
+            "attachments_example"
+        ],
+        caller_destinations=[
+            "caller_destinations_example"
+        ],
         number="number_example",
         fax_account="fax_account_example",
-        retries=0,
-        invoice="invoice_example",
-        sender_email="sender_email_example",
-        sender_name="sender_name_example",
     )
     try:
         # Create a new object
@@ -95,7 +88,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Faxes**](../../models/Faxes.md) |  | 
+[**FaxesCreateOrPatch**](../../models/FaxesCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -133,6 +126,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Faxes]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -274,7 +268,10 @@ Search and retrieve multiple objects simultaneously.
 import circuitid_python
 from circuitid_python.api.tags import faxes_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.faxes import Faxes
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -473,7 +470,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Faxes**]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Faxes]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_faxes.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -613,6 +626,7 @@ Get an object from the REST API Endpoint by its unique id.
 import circuitid_python
 from circuitid_python.api.tags import faxes_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.faxes import Faxes
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
@@ -711,6 +725,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Faxes]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -865,6 +880,7 @@ Delete an object by id, removing it from the service.
 import circuitid_python
 from circuitid_python.api.tags import faxes_api
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.faxes import Faxes
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
@@ -962,6 +978,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Faxes]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) | [**Faxes**]({{complexTypePrefix}}Faxes.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

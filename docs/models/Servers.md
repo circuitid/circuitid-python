@@ -8,13 +8,9 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**domesticOutboundCallLimit** | decimal.Decimal, int,  | decimal.Decimal,  |  | if omitted the server will use the default value of 10value must be a 32 bit integer
 **port** | decimal.Decimal, int,  | decimal.Decimal,  |  | if omitted the server will use the default value of 5060value must be a 32 bit integer
-**internationalOutboundCallLimit** | decimal.Decimal, int,  | decimal.Decimal,  |  | if omitted the server will use the default value of 10value must be a 32 bit integer
-**tollFreeChannelLimit** | decimal.Decimal, int,  | decimal.Decimal,  |  | if omitted the server will use the default value of 10value must be a 32 bit integer
 **host** | str,  | str,  |  | 
 **name** | str,  | str,  |  | 
-**domesticInboundCallLimit** | decimal.Decimal, int,  | decimal.Decimal,  |  | if omitted the server will use the default value of 10value must be a 32 bit integer
 **type** | str,  | str,  |  | must be one of ["sip", "skype", ] 
 **callerId** | str,  | str,  |  | [optional] 
 **inboundSipTrunkingOrder** | str,  | str,  | ObjectId (unique 12 bytes ID) | [optional] 

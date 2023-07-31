@@ -25,7 +25,6 @@ Key | Input Type | Accessed Type | Description | Notes
 **avatar** | str,  | str,  |  | [optional] 
 **language** | str,  | str,  |  | [optional] must be one of ["fr", "en", "ja", "de", "es", ] if omitted the server will use the default value of "en"
 **isPrimary** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 0value must be a 32 bit integer
-**status** | str,  | str,  |  | [optional] must be one of ["active", "disabled", "terminated", ] if omitted the server will use the default value of "active"
 **vmGreetingType** | str,  | str,  |  | [optional] must be one of ["default", "mp3", "number", ] if omitted the server will use the default value of "default"
 **vmTimeout** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] if omitted the server will use the default value of 20value must be a 32 bit integer
 **vmFile** | str,  | str,  | ObjectId (unique 12 bytes ID) | [optional] 
@@ -37,13 +36,8 @@ Key | Input Type | Accessed Type | Description | Notes
 **adminPermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
 **billingPermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
 **phonePermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
-**agilePermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
-**jobServerPermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
-**mediaServerPermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
-**mailServerPermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
-**superAdminPermission** | None, str,  | NoneClass, str,  |  | [optional] must be one of ["r", "rw", ] 
 **vmTranscription** | decimal.Decimal, int,  | decimal.Decimal,  |  | [optional] must be one of [1, 0, ] if omitted the server will use the default value of 0value must be a 32 bit integer
-**[communication](#communication)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**[communication](#communication)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] if omitted the server will use the default value of {"notifications":{"email":true,"sms":true},"missedCalls":{"email":true,"sms":true},"callRecordings":{"email":true,"sms":true},"newsletters":{"email":true,"sms":true},"voicemails":{"email":true,"sms":true},"web":{"sounds":true}}
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # communication
@@ -51,7 +45,136 @@ Key | Input Type | Accessed Type | Description | Notes
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | if omitted the server will use the default value of {"notifications":{"email":true,"sms":true},"missedCalls":{"email":true,"sms":true},"callRecordings":{"email":true,"sms":true},"newsletters":{"email":true,"sms":true},"voicemails":{"email":true,"sms":true},"web":{"sounds":true}}
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**[any_string_name](#any_string_name)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | any string name can be used but the value must be the correct type | [optional] 
+
+# any_string_name
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
 dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**[notifications](#notifications)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**[missedCalls](#missedCalls)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**[callRecordings](#callRecordings)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**[newsletters](#newsletters)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**[voicemails](#voicemails)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**[web](#web)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**[email](#email)** | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | [optional] 
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# notifications
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**email** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sms** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sound** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# missedCalls
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**email** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sms** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sound** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# callRecordings
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**email** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sms** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sound** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# newsletters
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**email** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sms** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sound** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# voicemails
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**email** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sms** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sound** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# web
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**email** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sms** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sound** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# email
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+### Dictionary Keys
+Key | Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | ------------- | -------------
+**email** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sms** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**sound** | bool,  | BoolClass,  |  | [optional] if omitted the server will use the default value of True
+**any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

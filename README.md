@@ -1,4 +1,4 @@
-# circuitid-python
+# circuitid_python
 # Introduction
 Circuit ID&reg; is an innovative cloud communications platform that redefines your connectivity experience. Our cutting-edge AI-powered solution seamlessly integrates calling, meetings, messaging, voicemail, fax, SIP Trunking, mobile broadband, and mobile phone services, accessible wherever you and your devices go.
                 
@@ -9,7 +9,7 @@ We are excited to have you on board and are confident that this documentation si
 Happy coding!
 
 
-- API version: 0.47.19
+- API version: 0.47.21
 - Package version: 1.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.circuitid.com/](https://www.circuitid.com/)
@@ -149,6 +149,8 @@ import circuitid_python
 from pprint import pprint
 from circuitid_python.api.tags import accepted_senders_api
 from circuitid_python.models.acceptedsenders import Acceptedsenders
+from circuitid_python.models.acceptedsenders_create_or_patch import AcceptedsendersCreateOrPatch
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.response_users import ResponseUsers
@@ -173,16 +175,16 @@ configuration.api_key['jwt'] = 'YOUR_API_KEY'
 with circuitid_python.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accepted_senders_api.AcceptedSendersApi(api_client)
-    acceptedsenders = Acceptedsenders(
+    acceptedsenders_create_or_patch = AcceptedsendersCreateOrPatch(
         object="object_example",
         service="service_example",
         service_ref="service_ref_example",
         ref="users",
-    ) # Acceptedsenders | The JSON object that will be posted to the REST API endpoint.
+    ) # AcceptedsendersCreateOrPatch | The JSON object that will be posted to the REST API endpoint.
 
     try:
         # Create a new object
-        api_response = api_instance.create_accepted_sender(acceptedsenders)
+        api_response = api_instance.create_accepted_sender(acceptedsenders_create_or_patch)
         pprint(api_response)
     except circuitid_python.ApiException as e:
         print("Exception when calling AcceptedSendersApi->create_accepted_sender: %s\n" % e)
@@ -326,8 +328,6 @@ Class | Method | HTTP request | Description
 *MessageBrandsApi* | [**create_message_brand**](docs/apis/tags/MessageBrandsApi.md#create_message_brand) | **post** /messagebrands | Create a new object
 *MessageBrandsApi* | [**find_message_brands**](docs/apis/tags/MessageBrandsApi.md#find_message_brands) | **get** /messagebrands | Find multiple objects
 *MessageBrandsApi* | [**get_message_brand**](docs/apis/tags/MessageBrandsApi.md#get_message_brand) | **get** /messagebrands/{id} | Get object by id
-*MessageBrandsApi* | [**patch_message_brand**](docs/apis/tags/MessageBrandsApi.md#patch_message_brand) | **patch** /messagebrands/{id} | Patch object&#x27;s data
-*MessageBrandsApi* | [**remove_message_brand**](docs/apis/tags/MessageBrandsApi.md#remove_message_brand) | **delete** /messagebrands/{id} | Delete object by id
 *MessageCampaignsApi* | [**create_message_campaign**](docs/apis/tags/MessageCampaignsApi.md#create_message_campaign) | **post** /messagecampaigns | Create a new object
 *MessageCampaignsApi* | [**find_message_campaigns**](docs/apis/tags/MessageCampaignsApi.md#find_message_campaigns) | **get** /messagecampaigns | Find multiple objects
 *MessageCampaignsApi* | [**get_message_campaign**](docs/apis/tags/MessageCampaignsApi.md#get_message_campaign) | **get** /messagecampaigns/{id} | Get object by id
@@ -336,7 +336,6 @@ Class | Method | HTTP request | Description
 *NumberPortsApi* | [**create_number_port**](docs/apis/tags/NumberPortsApi.md#create_number_port) | **post** /numberports | Create a new object
 *NumberPortsApi* | [**find_number_ports**](docs/apis/tags/NumberPortsApi.md#find_number_ports) | **get** /numberports | Find multiple objects
 *NumberPortsApi* | [**get_number_port**](docs/apis/tags/NumberPortsApi.md#get_number_port) | **get** /numberports/{id} | Get object by id
-*NumberPortsApi* | [**patch_number_port**](docs/apis/tags/NumberPortsApi.md#patch_number_port) | **patch** /numberports/{id} | Patch object&#x27;s data
 *NumbersApi* | [**find_numbers**](docs/apis/tags/NumbersApi.md#find_numbers) | **get** /numbers | Find multiple objects
 *NumbersApi* | [**get_number**](docs/apis/tags/NumbersApi.md#get_number) | **get** /numbers/{id} | Get object by id
 *NumbersApi* | [**patch_number**](docs/apis/tags/NumbersApi.md#patch_number) | **patch** /numbers/{id} | Patch object&#x27;s data
@@ -398,51 +397,91 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Acceptedsenders](docs/models/Acceptedsenders.md)
+ - [AcceptedsendersCreateOrPatch](docs/models/AcceptedsendersCreateOrPatch.md)
  - [Announcements](docs/models/Announcements.md)
+ - [AnnouncementsCreateOrPatch](docs/models/AnnouncementsCreateOrPatch.md)
  - [Authentication](docs/models/Authentication.md)
+ - [AuthenticationCreateOrPatch](docs/models/AuthenticationCreateOrPatch.md)
  - [Callqueueagents](docs/models/Callqueueagents.md)
+ - [CallqueueagentsCreateOrPatch](docs/models/CallqueueagentsCreateOrPatch.md)
  - [Callqueues](docs/models/Callqueues.md)
+ - [CallqueuesCreateOrPatch](docs/models/CallqueuesCreateOrPatch.md)
  - [Chatrooms](docs/models/Chatrooms.md)
+ - [ChatroomsCreateOrPatch](docs/models/ChatroomsCreateOrPatch.md)
  - [Clients](docs/models/Clients.md)
+ - [ClientsCreateOrPatch](docs/models/ClientsCreateOrPatch.md)
  - [Conferencerooms](docs/models/Conferencerooms.md)
+ - [ConferenceroomsCreateOrPatch](docs/models/ConferenceroomsCreateOrPatch.md)
  - [Contacts](docs/models/Contacts.md)
+ - [ContactsCreateOrPatch](docs/models/ContactsCreateOrPatch.md)
  - [Conversationmessages](docs/models/Conversationmessages.md)
+ - [ConversationmessagesCreateOrPatch](docs/models/ConversationmessagesCreateOrPatch.md)
  - [Conversations](docs/models/Conversations.md)
+ - [ConversationsCreateOrPatch](docs/models/ConversationsCreateOrPatch.md)
  - [Customers](docs/models/Customers.md)
+ - [CustomersCreateOrPatch](docs/models/CustomersCreateOrPatch.md)
  - [Developerapps](docs/models/Developerapps.md)
+ - [DeveloperappsCreateOrPatch](docs/models/DeveloperappsCreateOrPatch.md)
  - [Developerappsubscriptions](docs/models/Developerappsubscriptions.md)
+ - [DeveloperappsubscriptionsCreateOrPatch](docs/models/DeveloperappsubscriptionsCreateOrPatch.md)
  - [Directories](docs/models/Directories.md)
+ - [DirectoriesCreateOrPatch](docs/models/DirectoriesCreateOrPatch.md)
  - [Domains](docs/models/Domains.md)
+ - [DomainsCreateOrPatch](docs/models/DomainsCreateOrPatch.md)
  - [Faxaccounts](docs/models/Faxaccounts.md)
+ - [FaxaccountsCreateOrPatch](docs/models/FaxaccountsCreateOrPatch.md)
  - [Faxes](docs/models/Faxes.md)
+ - [FaxesCreateOrPatch](docs/models/FaxesCreateOrPatch.md)
  - [Find](docs/models/Find.md)
  - [Firewall](docs/models/Firewall.md)
+ - [FirewallCreateOrPatch](docs/models/FirewallCreateOrPatch.md)
  - [Groupmembers](docs/models/Groupmembers.md)
+ - [GroupmembersCreateOrPatch](docs/models/GroupmembersCreateOrPatch.md)
  - [Groups](docs/models/Groups.md)
+ - [GroupsCreateOrPatch](docs/models/GroupsCreateOrPatch.md)
  - [Holidays](docs/models/Holidays.md)
+ - [HolidaysCreateOrPatch](docs/models/HolidaysCreateOrPatch.md)
+ - [Id](docs/models/Id.md)
  - [Invoiceitems](docs/models/Invoiceitems.md)
  - [Invoices](docs/models/Invoices.md)
  - [Licenses](docs/models/Licenses.md)
+ - [LicensesCreateOrPatch](docs/models/LicensesCreateOrPatch.md)
  - [Menuoptions](docs/models/Menuoptions.md)
+ - [MenuoptionsCreateOrPatch](docs/models/MenuoptionsCreateOrPatch.md)
  - [Menus](docs/models/Menus.md)
+ - [MenusCreateOrPatch](docs/models/MenusCreateOrPatch.md)
  - [Messagebrands](docs/models/Messagebrands.md)
+ - [MessagebrandsCreateOrPatch](docs/models/MessagebrandsCreateOrPatch.md)
  - [Messagecampaigns](docs/models/Messagecampaigns.md)
+ - [MessagecampaignsCreateOrPatch](docs/models/MessagecampaignsCreateOrPatch.md)
  - [Numberports](docs/models/Numberports.md)
+ - [NumberportsCreateOrPatch](docs/models/NumberportsCreateOrPatch.md)
  - [Numbers](docs/models/Numbers.md)
+ - [NumbersCreateOrPatch](docs/models/NumbersCreateOrPatch.md)
  - [Offices](docs/models/Offices.md)
+ - [OfficesCreateOrPatch](docs/models/OfficesCreateOrPatch.md)
  - [Phoneinboundruleactions](docs/models/Phoneinboundruleactions.md)
+ - [PhoneinboundruleactionsCreateOrPatch](docs/models/PhoneinboundruleactionsCreateOrPatch.md)
  - [Phoneinboundrules](docs/models/Phoneinboundrules.md)
+ - [PhoneinboundrulesCreateOrPatch](docs/models/PhoneinboundrulesCreateOrPatch.md)
  - [Phoneoutboundruleactions](docs/models/Phoneoutboundruleactions.md)
+ - [PhoneoutboundruleactionsCreateOrPatch](docs/models/PhoneoutboundruleactionsCreateOrPatch.md)
  - [Phoneoutboundrules](docs/models/Phoneoutboundrules.md)
+ - [PhoneoutboundrulesCreateOrPatch](docs/models/PhoneoutboundrulesCreateOrPatch.md)
  - [Ratecenters](docs/models/Ratecenters.md)
  - [ResponseDate](docs/models/ResponseDate.md)
  - [ResponseError](docs/models/ResponseError.md)
  - [ResponseUsers](docs/models/ResponseUsers.md)
  - [Servers](docs/models/Servers.md)
+ - [ServersCreateOrPatch](docs/models/ServersCreateOrPatch.md)
  - [Timeschedules](docs/models/Timeschedules.md)
+ - [TimeschedulesCreateOrPatch](docs/models/TimeschedulesCreateOrPatch.md)
  - [Users](docs/models/Users.md)
+ - [UsersCreateOrPatch](docs/models/UsersCreateOrPatch.md)
  - [Usertokens](docs/models/Usertokens.md)
+ - [UsertokensCreateOrPatch](docs/models/UsertokensCreateOrPatch.md)
  - [Virtualextensions](docs/models/Virtualextensions.md)
+ - [VirtualextensionsCreateOrPatch](docs/models/VirtualextensionsCreateOrPatch.md)
 
 ## Documentation For Authorization
 

@@ -11,11 +11,12 @@ Key | Input Type | Accessed Type | Description | Notes
 **accountPhoneNumber** | str,  | str,  |  | 
 **typeOfService** | str,  | str,  |  | must be one of ["business", "residence", ] 
 **name** | str,  | str,  |  | 
+**[numbers](#numbers)** | list, tuple,  | tuple,  |  | 
 **destinationType** | str,  | str,  |  | must be one of ["announcements", "directories", "park", "numbers", "menus", "users", "servers", "inboundrules", "callqueues", "faxaccounts", "callforwarding", "hangup", "phoneinboundrules", "voicemailaccounts", ] 
 **invoice** | str,  | str,  | ObjectId (unique 12 bytes ID) | 
 **office** | str,  | str,  | ObjectId (unique 12 bytes ID) | 
 **accountNumber** | str,  | str,  |  | 
-**type** | str,  | str,  |  | must be one of ["port in", "port out", ] 
+**type** | str,  | str,  |  | must be one of ["port in", "port out", ] if omitted the server will use the default value of "port in"
 **authorizedPerson** | str,  | str,  |  | 
 **desiredDueDate** | str, datetime,  | str,  |  | value must conform to RFC-3339 date-time
 **status** | str,  | str,  |  | must be one of ["processing", "failed", "error", "completed", ] if omitted the server will use the default value of "processing"
@@ -24,6 +25,18 @@ Key | Input Type | Accessed Type | Description | Notes
 **ref** | str,  | str,  |  | [optional] 
 **callForwardingDestination** | str,  | str,  |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
+
+# numbers
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+items | str,  | str,  |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

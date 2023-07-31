@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_conversation_message**
 <a id="create_conversation_message"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_conversation_message(conversationmessages)
+> bool, date, datetime, dict, float, int, list, str, none_type create_conversation_message(conversationmessages_create_or_patch)
 
 Create a new object
 
@@ -25,8 +25,10 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import conversation_messages_api
+from circuitid_python.models.conversationmessages_create_or_patch import ConversationmessagesCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.conversationmessages import Conversationmessages
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -52,17 +54,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = conversation_messages_api.ConversationMessagesApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Conversationmessages(
+    body = ConversationmessagesCreateOrPatch(
         conversation="conversation_example",
-        _from=dict(),
-        from_number="from_number_example",
-        to=[
+        text="text_example",
+        attachments=[
             None
         ],
-        text="text_example",
-        direction="inbound",
-,
-        reference_id="reference_id_example",
     )
     try:
         # Create a new object
@@ -89,7 +86,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Conversationmessages**](../../models/Conversationmessages.md) |  | 
+[**ConversationmessagesCreateOrPatch**](../../models/ConversationmessagesCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -127,6 +124,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversationmessages]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -269,6 +267,9 @@ import circuitid_python
 from circuitid_python.api.tags import conversation_messages_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.conversationmessages import Conversationmessages
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -467,7 +468,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Conversationmessages]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_conversation_messages.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -608,6 +625,7 @@ import circuitid_python
 from circuitid_python.api.tags import conversation_messages_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.conversationmessages import Conversationmessages
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -705,6 +723,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversationmessages]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -846,7 +865,7 @@ Type | Description  | Notes
 
 # **patch_conversation_message**
 <a id="patch_conversation_message"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_conversation_message(idconversationmessages)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_conversation_message(idconversationmessages_create_or_patch)
 
 Patch object's data
 
@@ -858,8 +877,10 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import conversation_messages_api
+from circuitid_python.models.conversationmessages_create_or_patch import ConversationmessagesCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.conversationmessages import Conversationmessages
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -888,17 +909,12 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Conversationmessages(
+    body = ConversationmessagesCreateOrPatch(
         conversation="conversation_example",
-        _from=dict(),
-        from_number="from_number_example",
-        to=[
+        text="text_example",
+        attachments=[
             None
         ],
-        text="text_example",
-        direction="inbound",
-,
-        reference_id="reference_id_example",
     )
     try:
         # Patch object's data
@@ -927,7 +943,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Conversationmessages**](../../models/Conversationmessages.md) |  | 
+[**ConversationmessagesCreateOrPatch**](../../models/ConversationmessagesCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -979,6 +995,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversationmessages]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1121,6 +1138,7 @@ import circuitid_python
 from circuitid_python.api.tags import conversation_messages_api
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.conversationmessages import Conversationmessages
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1217,6 +1235,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Conversationmessages]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) | [**Conversationmessages**]({{complexTypePrefix}}Conversationmessages.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

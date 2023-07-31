@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_menu**
 <a id="create_menu"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_menu(menus)
+> bool, date, datetime, dict, float, int, list, str, none_type create_menu(menus_create_or_patch)
 
 Create a new object
 
@@ -25,8 +25,10 @@ Add a new object to the system.
 ```python
 import circuitid_python
 from circuitid_python.api.tags import menus_api
+from circuitid_python.models.menus_create_or_patch import MenusCreateOrPatch
 from circuitid_python.models.menus import Menus
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = menus_api.MenusApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Menus(
+    body = MenusCreateOrPatch(
         name="name_example",
         max_extension_length=4,
         speech_recognition=0,
@@ -97,7 +99,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Menus**](../../models/Menus.md) |  | 
+[**MenusCreateOrPatch**](../../models/MenusCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -135,6 +137,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Menus]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -277,6 +280,9 @@ import circuitid_python
 from circuitid_python.api.tags import menus_api
 from circuitid_python.models.menus import Menus
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -475,7 +481,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Menus**]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Menus]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_menus.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -616,6 +638,7 @@ import circuitid_python
 from circuitid_python.api.tags import menus_api
 from circuitid_python.models.menus import Menus
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -713,6 +736,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Menus]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -854,7 +878,7 @@ Type | Description  | Notes
 
 # **patch_menu**
 <a id="patch_menu"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_menu(idmenus)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_menu(idmenus_create_or_patch)
 
 Patch object's data
 
@@ -866,8 +890,10 @@ Make updates to specific fields within the record without replacing the entire d
 ```python
 import circuitid_python
 from circuitid_python.api.tags import menus_api
+from circuitid_python.models.menus_create_or_patch import MenusCreateOrPatch
 from circuitid_python.models.menus import Menus
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -896,7 +922,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Menus(
+    body = MenusCreateOrPatch(
         name="name_example",
         max_extension_length=4,
         speech_recognition=0,
@@ -943,7 +969,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Menus**](../../models/Menus.md) |  | 
+[**MenusCreateOrPatch**](../../models/MenusCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -995,6 +1021,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Menus]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1137,6 +1164,7 @@ import circuitid_python
 from circuitid_python.api.tags import menus_api
 from circuitid_python.models.menus import Menus
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1233,6 +1261,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Menus]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) | [**Menus**]({{complexTypePrefix}}Menus.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 

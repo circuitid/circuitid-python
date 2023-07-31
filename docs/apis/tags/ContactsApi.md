@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **create_contact**
 <a id="create_contact"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type create_contact(contacts)
+> bool, date, datetime, dict, float, int, list, str, none_type create_contact(contacts_create_or_patch)
 
 Create a new object
 
@@ -26,7 +26,9 @@ Add a new object to the system.
 import circuitid_python
 from circuitid_python.api.tags import contacts_api
 from circuitid_python.models.contacts import Contacts
+from circuitid_python.models.contacts_create_or_patch import ContactsCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -52,7 +54,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     api_instance = contacts_api.ContactsApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = Contacts(
+    body = ContactsCreateOrPatch(
         email="email_example",
         first="first_example",
         last="last_example",
@@ -89,7 +91,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Contacts**](../../models/Contacts.md) |  | 
+[**ContactsCreateOrPatch**](../../models/ContactsCreateOrPatch.md) |  | 
 
 
 ### Return Types, Responses
@@ -127,6 +129,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -269,6 +272,9 @@ import circuitid_python
 from circuitid_python.api.tags import contacts_api
 from circuitid_python.models.contacts import Contacts
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
+from circuitid_python.models.response_date import ResponseDate
+from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
 # Defining the host is optional and defaults to https://rest.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -467,7 +473,23 @@ list, tuple,  | tuple,  |  |
 ### Tuple Items
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-[**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[items](#items) | dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+# items
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### allOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
+[ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
+[ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
 #### find_contacts.ApiResponseFor400
 Name | Type | Description  | Notes
@@ -608,6 +630,7 @@ import circuitid_python
 from circuitid_python.api.tags import contacts_api
 from circuitid_python.models.contacts import Contacts
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -705,6 +728,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -846,7 +870,7 @@ Type | Description  | Notes
 
 # **patch_contact**
 <a id="patch_contact"></a>
-> bool, date, datetime, dict, float, int, list, str, none_type patch_contact(idcontacts)
+> bool, date, datetime, dict, float, int, list, str, none_type patch_contact(idcontacts_create_or_patch)
 
 Patch object's data
 
@@ -859,7 +883,9 @@ Make updates to specific fields within the record without replacing the entire d
 import circuitid_python
 from circuitid_python.api.tags import contacts_api
 from circuitid_python.models.contacts import Contacts
+from circuitid_python.models.contacts_create_or_patch import ContactsCreateOrPatch
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -888,7 +914,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
     path_params = {
         'id': "id_example",
     }
-    body = Contacts(
+    body = ContactsCreateOrPatch(
         email="email_example",
         first="first_example",
         last="last_example",
@@ -927,7 +953,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**Contacts**](../../models/Contacts.md) |  | 
+[**ContactsCreateOrPatch**](../../models/ContactsCreateOrPatch.md) |  | 
 
 
 ### path_params
@@ -979,6 +1005,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
@@ -1121,6 +1148,7 @@ import circuitid_python
 from circuitid_python.api.tags import contacts_api
 from circuitid_python.models.contacts import Contacts
 from circuitid_python.models.response_error import ResponseError
+from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from pprint import pprint
@@ -1217,6 +1245,7 @@ dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [Contacts]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) | [**Contacts**]({{complexTypePrefix}}Contacts.md) |  | 
+[Id]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) | [**Id**]({{complexTypePrefix}}Id.md) |  | 
 [ResponseUsers]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) | [**ResponseUsers**]({{complexTypePrefix}}ResponseUsers.md) |  | 
 [ResponseDate]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) | [**ResponseDate**]({{complexTypePrefix}}ResponseDate.md) |  | 
 
