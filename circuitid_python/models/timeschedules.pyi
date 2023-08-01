@@ -1480,8 +1480,8 @@ class Timeschedules(
                                     class MetaOapg:
                                         
                                         class properties:
-                                            start = schemas.StrSchema
-                                            end = schemas.StrSchema
+                                            start = schemas.DateTimeSchema
+                                            end = schemas.DateTimeSchema
                                             __annotations__ = {
                                                 "start": start,
                                                 "end": end,
@@ -1517,8 +1517,8 @@ class Timeschedules(
                                     def __new__(
                                         cls,
                                         *_args: typing.Union[dict, frozendict.frozendict, ],
-                                        start: typing.Union[MetaOapg.properties.start, str, schemas.Unset] = schemas.unset,
-                                        end: typing.Union[MetaOapg.properties.end, str, schemas.Unset] = schemas.unset,
+                                        start: typing.Union[MetaOapg.properties.start, str, datetime, schemas.Unset] = schemas.unset,
+                                        end: typing.Union[MetaOapg.properties.end, str, datetime, schemas.Unset] = schemas.unset,
                                         _configuration: typing.Optional[schemas.Configuration] = None,
                                         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                                     ) -> 'items':
@@ -1611,8 +1611,8 @@ class Timeschedules(
                                     class MetaOapg:
                                         
                                         class properties:
-                                            start = schemas.StrSchema
-                                            end = schemas.StrSchema
+                                            start = schemas.DateTimeSchema
+                                            end = schemas.DateTimeSchema
                                             __annotations__ = {
                                                 "start": start,
                                                 "end": end,
@@ -1648,8 +1648,8 @@ class Timeschedules(
                                     def __new__(
                                         cls,
                                         *_args: typing.Union[dict, frozendict.frozendict, ],
-                                        start: typing.Union[MetaOapg.properties.start, str, schemas.Unset] = schemas.unset,
-                                        end: typing.Union[MetaOapg.properties.end, str, schemas.Unset] = schemas.unset,
+                                        start: typing.Union[MetaOapg.properties.start, str, datetime, schemas.Unset] = schemas.unset,
+                                        end: typing.Union[MetaOapg.properties.end, str, datetime, schemas.Unset] = schemas.unset,
                                         _configuration: typing.Optional[schemas.Configuration] = None,
                                         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                                     ) -> 'items':
@@ -1742,8 +1742,8 @@ class Timeschedules(
                                     class MetaOapg:
                                         
                                         class properties:
-                                            start = schemas.StrSchema
-                                            end = schemas.StrSchema
+                                            start = schemas.DateTimeSchema
+                                            end = schemas.DateTimeSchema
                                             __annotations__ = {
                                                 "start": start,
                                                 "end": end,
@@ -1779,8 +1779,8 @@ class Timeschedules(
                                     def __new__(
                                         cls,
                                         *_args: typing.Union[dict, frozendict.frozendict, ],
-                                        start: typing.Union[MetaOapg.properties.start, str, schemas.Unset] = schemas.unset,
-                                        end: typing.Union[MetaOapg.properties.end, str, schemas.Unset] = schemas.unset,
+                                        start: typing.Union[MetaOapg.properties.start, str, datetime, schemas.Unset] = schemas.unset,
+                                        end: typing.Union[MetaOapg.properties.end, str, datetime, schemas.Unset] = schemas.unset,
                                         _configuration: typing.Optional[schemas.Configuration] = None,
                                         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                                     ) -> 'items':
@@ -1873,8 +1873,8 @@ class Timeschedules(
                                     class MetaOapg:
                                         
                                         class properties:
-                                            start = schemas.StrSchema
-                                            end = schemas.StrSchema
+                                            start = schemas.DateTimeSchema
+                                            end = schemas.DateTimeSchema
                                             __annotations__ = {
                                                 "start": start,
                                                 "end": end,
@@ -1910,8 +1910,8 @@ class Timeschedules(
                                     def __new__(
                                         cls,
                                         *_args: typing.Union[dict, frozendict.frozendict, ],
-                                        start: typing.Union[MetaOapg.properties.start, str, schemas.Unset] = schemas.unset,
-                                        end: typing.Union[MetaOapg.properties.end, str, schemas.Unset] = schemas.unset,
+                                        start: typing.Union[MetaOapg.properties.start, str, datetime, schemas.Unset] = schemas.unset,
+                                        end: typing.Union[MetaOapg.properties.end, str, datetime, schemas.Unset] = schemas.unset,
                                         _configuration: typing.Optional[schemas.Configuration] = None,
                                         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                                     ) -> 'items':
@@ -2004,8 +2004,8 @@ class Timeschedules(
                                     class MetaOapg:
                                         
                                         class properties:
-                                            start = schemas.StrSchema
-                                            end = schemas.StrSchema
+                                            start = schemas.DateTimeSchema
+                                            end = schemas.DateTimeSchema
                                             __annotations__ = {
                                                 "start": start,
                                                 "end": end,
@@ -2041,8 +2041,8 @@ class Timeschedules(
                                     def __new__(
                                         cls,
                                         *_args: typing.Union[dict, frozendict.frozendict, ],
-                                        start: typing.Union[MetaOapg.properties.start, str, schemas.Unset] = schemas.unset,
-                                        end: typing.Union[MetaOapg.properties.end, str, schemas.Unset] = schemas.unset,
+                                        start: typing.Union[MetaOapg.properties.start, str, datetime, schemas.Unset] = schemas.unset,
+                                        end: typing.Union[MetaOapg.properties.end, str, datetime, schemas.Unset] = schemas.unset,
                                         _configuration: typing.Optional[schemas.Configuration] = None,
                                         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                                     ) -> 'items':
@@ -2135,8 +2135,8 @@ class Timeschedules(
                                     class MetaOapg:
                                         
                                         class properties:
-                                            start = schemas.StrSchema
-                                            end = schemas.StrSchema
+                                            start = schemas.DateTimeSchema
+                                            end = schemas.DateTimeSchema
                                             __annotations__ = {
                                                 "start": start,
                                                 "end": end,
@@ -2172,8 +2172,8 @@ class Timeschedules(
                                     def __new__(
                                         cls,
                                         *_args: typing.Union[dict, frozendict.frozendict, ],
-                                        start: typing.Union[MetaOapg.properties.start, str, schemas.Unset] = schemas.unset,
-                                        end: typing.Union[MetaOapg.properties.end, str, schemas.Unset] = schemas.unset,
+                                        start: typing.Union[MetaOapg.properties.start, str, datetime, schemas.Unset] = schemas.unset,
+                                        end: typing.Union[MetaOapg.properties.end, str, datetime, schemas.Unset] = schemas.unset,
                                         _configuration: typing.Optional[schemas.Configuration] = None,
                                         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                                     ) -> 'items':
@@ -2266,8 +2266,8 @@ class Timeschedules(
                                     class MetaOapg:
                                         
                                         class properties:
-                                            start = schemas.StrSchema
-                                            end = schemas.StrSchema
+                                            start = schemas.DateTimeSchema
+                                            end = schemas.DateTimeSchema
                                             __annotations__ = {
                                                 "start": start,
                                                 "end": end,
@@ -2303,8 +2303,8 @@ class Timeschedules(
                                     def __new__(
                                         cls,
                                         *_args: typing.Union[dict, frozendict.frozendict, ],
-                                        start: typing.Union[MetaOapg.properties.start, str, schemas.Unset] = schemas.unset,
-                                        end: typing.Union[MetaOapg.properties.end, str, schemas.Unset] = schemas.unset,
+                                        start: typing.Union[MetaOapg.properties.start, str, datetime, schemas.Unset] = schemas.unset,
+                                        end: typing.Union[MetaOapg.properties.end, str, datetime, schemas.Unset] = schemas.unset,
                                         _configuration: typing.Optional[schemas.Configuration] = None,
                                         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                                     ) -> 'items':

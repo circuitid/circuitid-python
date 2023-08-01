@@ -54,8 +54,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**start** | str,  | str,  |  | [optional] 
-**end** | str,  | str,  |  | [optional] 
+**start** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
+**end** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # monday
@@ -93,8 +93,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**start** | str,  | str,  |  | [optional] 
-**end** | str,  | str,  |  | [optional] 
+**start** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
+**end** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # tuesday
@@ -132,8 +132,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**start** | str,  | str,  |  | [optional] 
-**end** | str,  | str,  |  | [optional] 
+**start** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
+**end** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # wednesday
@@ -171,8 +171,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**start** | str,  | str,  |  | [optional] 
-**end** | str,  | str,  |  | [optional] 
+**start** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
+**end** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # thursday
@@ -210,8 +210,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**start** | str,  | str,  |  | [optional] 
-**end** | str,  | str,  |  | [optional] 
+**start** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
+**end** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # friday
@@ -249,8 +249,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**start** | str,  | str,  |  | [optional] 
-**end** | str,  | str,  |  | [optional] 
+**start** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
+**end** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # saturday
@@ -288,8 +288,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**start** | str,  | str,  |  | [optional] 
-**end** | str,  | str,  |  | [optional] 
+**start** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
+**end** | str, datetime,  | str,  |  | [optional] value must conform to RFC-3339 date-time
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

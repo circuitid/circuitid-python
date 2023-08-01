@@ -60,8 +60,8 @@ with circuitid_python.ApiClient(configuration) as api_client:
         sunday=dict(
             schedules=[
                 dict(
-                    start="start_example",
-                    end="end_example",
+                    start="1970-01-01T00:00:00.00Z",
+                    end="1970-01-01T00:00:00.00Z",
                 )
             ],
         ),
@@ -926,8 +926,8 @@ with circuitid_python.ApiClient(configuration) as api_client:
         sunday=dict(
             schedules=[
                 dict(
-                    start="start_example",
-                    end="end_example",
+                    start="1970-01-01T00:00:00.00Z",
+                    end="1970-01-01T00:00:00.00Z",
                 )
             ],
         ),
