@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
 # circuitid_python.api.tags.licenses_api.LicensesApi
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,10 +32,10 @@ from circuitid_python.models.licenses_create_or_patch import LicensesCreateOrPat
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -270,10 +270,10 @@ from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -628,10 +628,10 @@ from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -883,10 +883,10 @@ from circuitid_python.models.licenses_create_or_patch import LicensesCreateOrPat
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1140,10 +1140,10 @@ from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_users import ResponseUsers
 from circuitid_python.models.licenses import Licenses
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -1,7 +1,7 @@
 <a id="__pageTop"></a>
 # circuitid_python.api.tags.voicemail_api.VoicemailApi
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,10 +24,10 @@ import circuitid_python
 from circuitid_python.api.tags import voicemail_api
 from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -362,10 +362,10 @@ import circuitid_python
 from circuitid_python.api.tags import voicemail_api
 from circuitid_python.models.response_error import ResponseError
 from pprint import pprint
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters

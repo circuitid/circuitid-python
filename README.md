@@ -9,7 +9,7 @@ We are excited to have you on board and are confident that this documentation si
 Happy coding!
 
 
-- API version: 0.47.21
+- API version: 0.47.22
 - Package version: 1.0.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.circuitid.com/](https://www.circuitid.com/)
@@ -154,10 +154,10 @@ from circuitid_python.models.id import Id
 from circuitid_python.models.response_date import ResponseDate
 from circuitid_python.models.response_error import ResponseError
 from circuitid_python.models.response_users import ResponseUsers
-# Defining the host is optional and defaults to https://rest.circuitid.com
+# Defining the host is optional and defaults to https://cloud9.circuitid.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = circuitid_python.Configuration(
-    host = "https://rest.circuitid.com"
+    host = "https://cloud9.circuitid.com"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -192,7 +192,7 @@ with circuitid_python.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://rest.circuitid.com*
+All URIs are relative to *https://cloud9.circuitid.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
